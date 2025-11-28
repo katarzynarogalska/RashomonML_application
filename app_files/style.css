@@ -39,5 +39,25 @@ section[data-testid="stSidebar"] hr {
 }
 
 
+.stSelectbox div[data-baseweb="select"] > div:first-child {
+    background-color: white;
+    color: gray !important;
+    border-color: #426c85;
+}
 
+section[data-testid="stSidebar"] label {
+    font-family: 'Inter', sans-serif !important;
+    color: gray !important;
+    font-size: 18px !important;
+    margin-bottom: 0.2rem !important;
+}
 
+/* ustawienia slider */
+section[data-testid="stSidebar"] .stSlider,
+section[data-testid="stSidebar"] .stSlider .rc-slider-mark-text {
+    color: gray !important;
+}
+
+section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
+    background-color: #ddd !important;
+}

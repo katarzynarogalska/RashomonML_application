@@ -1,0 +1,43 @@
+.stApp {
+    background-color: #ebebeb;
+    font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+    color: darkgray !important;
+    margin: 0 !important;
+    padding-top : 0 !important;
+}
+
+/* header[data-testid="stHeader"] {
+    display: none !important;
+}    */
+
+
+/* Styl sidebar */
+section[data-testid="stSidebar"] > div {
+    background: white !important;
+}
+
+
+/* Przyciski w sidebar */
+section[data-testid="stSidebar"] .stButton button {
+    background: linear-gradient(45deg, hsl(214, 100%, 71%), hsl(216, 51%, 78%)) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    margin: 0.2rem 0 !important;
+    width: 100% !important;
+}
+
+
+
+/* Linia separatora w sidebar */
+section[data-testid="stSidebar"] hr {
+    border-color: darkgray !important;
+    margin: 0.5rem 0 !important;
+}
+
+
+
+

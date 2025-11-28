@@ -153,11 +153,99 @@ compas_dict ={
     "Characteristics": "This data is the representation or a real life situation when predictive multiplicity should be carefully examined before the decision-making process, as it may have harmful consequences. One model can predict that a defendant will commit a crime in the next two-year period, while another predicts that they will not. It is crucial for the model to not be biased in favor of any race so relying on model scores itself might be unfair to individuals. Examining predictive multiplicity allows us to identify where different models disagree and to make more informed, fair, and accountable decisions which is crucial in this case."
 }
 
-glass_dict ={}
+glass_dict ={
+    "title" : "Glass Classification Dataset", 
+    "source": "https://www.kaggle.com/datasets/uciml/glass/data",
+    "license": "Database Contents License (DbCL) v1.0",
+    "references" : "German, B. (1987). Glass Identification [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5WW2P",
+    "classification task" : "multiclass classification",
+    "assigned category" : "Data challenging for ML algorithms",
+    "short description" : "This dataset contains information about six different types of glass, defined in terms of their oxide content.",
+    "long description" :" This dataset contains information on six different types of glass, defined in terms of their oxide content (i.e. Na - sodium, Fe - iron, K - potassium, etc.). Data was published by the USA Forensic Science Service in 1987 to predict the type of glass (from building windows and vehicle windows to containers and headlamps). It is worth noting that the original study of classification of types of glass was motivated by criminological investigation.",
+    "target" : "Column name - Type, 1 : building_windows_float_processed, 2 : building_windows_non_float_processed, 3 : vehicle_windows_float_processed, 5 containers, 6 tableware, 7 headlamps (class 4 is not present in the dataset) ",
+    "Number of classes" : 6,
+    "Number of records" : 214,
+    "Number of features" : 9,
+    "Feature description" : [
+        "RI: refractive index",
+        "Na: Sodium (unit measurement: weight percent in corresponding oxide, as are attributes 4-10)",
+        "Mg: Magnesium",
+        "Al: Aluminum",
+        "Si: Silicon",
+        "K: Potassium",
+        "Ca: Calcium",
+        "Ba: Barium",
+        "Fe: Iron"
 
-letter_dict ={}
+    ],
+    "Note" : "Data from this dataset was saved from Kaggle in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process.",
+    "Characteristics" :"Features in this dataset are highly correlated, with the highest positive Pearson correlation value being 0.81 (between Ca and RI) and the strongest negative -0.71 value (between Mg and RI). This might be problematic for some machine learning models, especially linear models like linear regression. This dataset also shows class imbalance with most observations from classes 0 and 1."
+}
 
-yeast_dict ={}
+letter_dict ={
+    "title" : "Letter Recognition Dataset", 
+    "source": "https://archive.ics.uci.edu/dataset/59/letter+recognition",
+    "license": "CC by 4.0",
+    "references" : "Author - David Slate",
+    "classification task" : "multiclass classification",
+    "assigned category" : "Data challenging for ML algorithms",
+    "short description" : "A dataset containing numerous pictures of letters converted to pixel characteristics allowing the ML algorithms to learn the stucture of the pixels and recognize the correct letter from the alphabet. ",
+    "long description" :"This dataset consists of rows represeting a single handwritten letter. Many different fonts and sizes of the letters pose an additional challange for ML algorithms. Each picture was firstly converted to pixel matrix with white pixels illustrating the letter, and the black ones being the background. Then raw pixels were converted into a set of numerical attributes such as height, width and total number of whit pixels. This dataset contains 26 possible classes, many of which occur very infequently. ",
+    "target" : "Column name - letter, capital letters from the English alphabet",
+    "Number of classes" : 26,
+    "Number of records" : 20000,
+    "Number of features" : 16,
+    "Feature description" : [
+        "x-box : horizontal position of the box",
+        "y-box : vertical position of the box",
+        "width : width of the box",
+        "height : height of the box",
+        "onpix : total number of on pixels",
+        "x-bar : mean x of on pixels in the box",
+        "y-bar : mean y of on pixels in the box",
+        "x2bar : mean x variance",
+        "y2bar : mean y variance",
+        "xybar : mean x y correlation",
+        "x2ybr : mean of x*x*y",
+        "xy2br : mean of x*y*y",
+        "x-ege : mean edge count left to right",
+        "xegvy : correlation of x-ege with y",
+        "y-ege : mean edge count bottom to top",
+        "yegvx : correlation of y-ege with x"
+    ],
+    "Note" :"Data from this dataset was saved from UCI in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process. All feature descriptions were copied from the dataset source.",
+    "Characteristics" : "This dataset is an example of a multiclassification dataset with a great number of classes, many of which occur very rarely. That is an additionall challenge for ML algorithms, especially to differ between the rare classes."
+}
+
+yeast_dict ={
+    "title" : "Yeast Dataset", 
+    "source": "https://archive.ics.uci.edu/dataset/110/yeast",
+    "license": "CC by 4.0",
+    "references" : "Author - Kenta Nakai, Citations related to the dataset - 'Expert System for Predicting Protein Localization Sites in Gram-Negative Bacteria', Kenta Nakai & Minoru Kanehisa, PROTEINS: Structure, Function, and Genetics 11:95-110, 1991, 'A Knowledge Base for Predicting Protein Localization Sites in Eukaryotic Cells', Kenta Nakai & Minoru Kanehisa, Genomics 14:897-911, 1992.",
+    "classification task" : "multiclass classification",
+    "assigned category" : "Data challenging for ML algorithms",
+    "short description" : "A dataset from molecular biology containing information about protein properties that allow predicting their cellular localization. ",
+    "long description" :"The dataset originates from research on yeast (Saccharomyces cerevisiae) proteins. It contains various features describing their psychochemical characteristics, which can be used to predict their subcellular localization. The possible protein localizations have been categorized into 10 classes such as for example mitochondria(MIT) or vacuole(VAC)",
+    "target" : "Column name - localization_site, MIT - Mitochondria, NUC - Nucleus, CYT - Cytoplasm, ME1/2/3 - Membrane protein site 1/2/3, EXC - Extracellular, VAC - Vacuole, POX - Peroxisome, ERL - Endoplasmic reticulum (lumen)",
+    "Number of classes" : 10,
+    "Number of records" : 1484,
+    "Number of features" : 9,
+    "Feature description" : [
+        "Sequence Name : Accession number for the SWISS-PROT database",
+        "Mcg : McGeoch's method for signal sequence recognition",
+        "Gvh : von Heijne's method for signal sequence recognition",
+        "Alm : Score of the ALOM membrane spanning region prediction program",
+        "Mit : Score of discriminant analysis of the amino acid content of the N-terminal region (20 residues long) of mitochondrial and non-mitochondrial proteins",
+        "Erl : Presence of HDEL substring (thought to act as a signal for retention in the endoplasmic reticulum lumen). Binary attribute",
+        "Pox : Peroxisomal targeting signal in the C-terminus.",
+        "Vac : Score of discriminant analysis of the amino acid content of vacuolar and extracellular proteins",
+        "Nuc : Score of discriminant analysis of nuclear localization signals of nuclear and non-nuclear proteins",
+        "Localization site : used as target, possible values are MIT - Mitochondria, NUC - Nucleus, CYT - Cytoplasm, ME1/2/3 - Membrane protein site 1/2/3, EXC - Extracellular, VAC - Vacuole, POX - Peroxisome, ERL - Endoplasmic reticulum (lumen)"
+
+    ],
+    "Note" :"Data from this dataset was saved from UCI in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process. All feature descriptions were copied from the dataset source.",
+    "Characteristics" :"This dataset may be particularly interesting as it is an example of a multiclass classification problem with multiple classes, some of which occur very infrequently. That could impose a challenge for ML algorithms to correctly detect those rare classes."
+}
 
 def return_datasets_descriptions():
     '''Returns the list of all pre-saved datasets dictionaries'''

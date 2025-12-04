@@ -1,25 +1,47 @@
 .stApp {
-    background-color: #ebebeb;
+    background-color: #f5f5f5;
     font-family: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
     color: darkgray !important;
     margin: 0 !important;
     padding-top : 0 !important;
 }
 
-/* header[data-testid="stHeader"] {
-    display: none !important;
-}    */
+ /* smaller padding from left and right  */
+.block-container {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+    max-width: 100% !important; 
+}
+
+[data-testid="stVerticalBlock"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
 
 
 /* Styl sidebar */
 section[data-testid="stSidebar"] > div {
     background: white !important;
 }
+[data-testid="stSidebar"] {
+    min-width: 20vw !important;
+    max-width: 20vw !important;
+}
+
+/* Make inner container match that width */
+[data-testid="stSidebar"] > div:first-child {
+    width: 20vw !important;
+}
 
 
 /* Przyciski w sidebar */
 section[data-testid="stSidebar"] .stButton button {
-    background: linear-gradient(45deg, hsl(214, 100%, 71%), hsl(216, 51%, 78%)) !important;
+    background: linear-gradient(
+    45deg,
+    hsl(204, 65%, 26%), 
+    hsl(204, 60%, 38%)) !important;
     color: white !important;
     border: none !important;
     border-radius: 10px !important;
@@ -27,7 +49,7 @@ section[data-testid="stSidebar"] .stButton button {
     font-weight: 500 !important;
     transition: all 0.3s ease !important;
     margin: 0.2rem 0 !important;
-    width: 100% !important;
+    width: 90% !important;
 }
 
 
@@ -45,12 +67,7 @@ section[data-testid="stSidebar"] hr {
     border-color: #426c85;
 }
 
-section[data-testid="stSidebar"] label {
-    font-family: 'Inter', sans-serif !important;
-    color: gray !important;
-    font-size: 18px !important;
-    margin-bottom: 0.2rem !important;
-}
+
 
 /* ustawienia slider */
 section[data-testid="stSidebar"] .stSlider,
@@ -61,3 +78,155 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-mark-text {
 section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     background-color: #ddd !important;
 }
+
+
+/* Sidebar text fonts ------------------------------------------------- */
+
+.sidebar_title{
+    color: #16476A;
+    font-family: 'Inter', sans-serif;
+    font-size : 28px;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+}
+
+.st-key-white_cont {
+    background-color: white;
+    border-radius: 0.6rem;
+    padding-bottom: 1.3vw;
+    padding-top: 1.3vw;
+    padding-left: 1.3vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.st-key-white_cont0, .st-key-white_cont1, .st-key-white_cont2, .st-key-white_cont3,.st-key-white_cont4, .st-key-white_cont5, .st-key-white_cont6, .st-key-white_cont7, .st-key-white_cont8 {
+    background-color: white;
+    border-radius: 0.6rem;
+    padding: 1.5vw;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Home page text fonts ------------------------------------------------- */
+.homepage_title{
+    color: #16476A;
+    font-family: 'Inter', sans-serif;
+    font-size : 3.5vw;
+    margin-bottom: 0rem;
+    font-weight: 500;
+    
+}
+.homepage_subtitle{
+    color: #16476A;
+    font-family: 'Inter', sans-serif;
+    font-size : 2vw;
+    margin-top:0;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    border-bottom: 1.2px solid #426c85;
+    border-radius: 0;
+}
+.overview_descr{
+    color:#557D95 ;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    margin-top:0.3rem;
+    text-align: justify;
+
+}
+
+.section_title{
+    color: #16476A;
+    font-family: 'Inter', sans-serif;
+    font-size : 2vw;
+    margin-top:1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+
+
+.section_descr{
+    color: #557D95;
+    background-color: white;
+    border-radius: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    margin-top:0.3rem;
+    margin-bottom: 0.3rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.2vw;
+    font-weight: 500;
+    text-align: justify;
+
+}
+
+.section_descr_metrics{
+    color: #557D95;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    margin-top:0.3rem;
+    margin-bottom: 0rem !important;
+    padding: 1.2vw;
+    font-weight: 500;
+    text-align: justify;
+
+}
+
+.rashomon_style{
+    padding-right: 1.3vw;
+    color: #557D95;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    font-weight: 500;
+    text-align: justify;
+
+}
+.rashomon_style_question{
+    padding: 1.3vw;
+    padding-top:1.1vw;
+    color: #557D95;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    font-weight: 500;
+    text-align: justify;
+
+}
+
+.rashomon_question{
+    padding: 1.3vw;
+    padding-bottom: 0vw;
+    color: #557D95;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.5vw;
+    font-weight: 600;
+    text-align: justify;
+
+}
+
+.key_style{
+    box-sizing: border-box;
+    color: #16476A;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    font-weight: 600;
+    padding-left: 1.3vw;
+    padding-top:1.2vw;
+
+}
+.data_descr{
+    box-sizing: border-box;
+    padding-left: 1.5vw;
+    color: #557D95;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    font-weight: 500;
+    text-align: justify;
+    background-color: #f5f5f5;
+    padding-right: 1.3vw;
+
+}
+
+.add_bottom_padding{
+    margin-bottom: 1.3vw !important;
+}
+

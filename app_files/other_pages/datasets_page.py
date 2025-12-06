@@ -8,8 +8,9 @@ from description_files.datasets_descr import return_datasets_descriptions
 
 
 def display_data_info(data_dict, idx):
-    st.markdown(f'<div class="section_title"> {data_dict["Title"]}</div>', unsafe_allow_html=True)
+    
     with st.container(key=f"white_cont{idx}"):
+        st.markdown(f'<div class="dataset_title"> &nbsp; {data_dict["Title"]}</div>', unsafe_allow_html=True)
         
         for key, value in data_dict.items():
 
@@ -29,7 +30,7 @@ def display_data_info(data_dict, idx):
 
 def show():
     st.markdown('<div class="homepage_title"> Datasets Page </div>', unsafe_allow_html=True)
-    st.markdown(f'<div class="overview_descr"> This page is dedicated to provide detailed descriptions and characteristics of pre-saved datasets that are available for analysis. </div>', unsafe_allow_html=True)
+    st.markdown(f'<div class="section_descr"> This page is dedicated to provide detailed descriptions and characteristics of pre-saved datasets that are available for analysis. Additionally, we present charts illustrating the characteristics mentioned in the descriptions. </div>', unsafe_allow_html=True)
     list_dict = return_datasets_descriptions()
     for i,dict in enumerate(list_dict):
         display_data_info(dict, i)

@@ -22,16 +22,41 @@ Among them, the model with the highest score is called the <strong>base model</s
 
 rashomon_set_situation="""
 Regarding the illustration, the best model predicted the negative class for the client number 10. Depending on the classification problem, this could mean that the client will not receive a loan or insurance, or that they are not a carrier of a disease.
-Upon closer examination of this situation, we notice that Model 2 is is part of the Rashomon Set if we allow an error margin of 1%. This second model, while achieving similarly strong overall performance, gives a different prediction for client number 10. 
-This raises an important question : <strong>how many individual predictions would change if we chose the competing model over the best model?</strong> Perhaps, Model 2 is more interpretable, more stable and might even be preferable to Model 1. <br> <br>
+Upon closer examination of this situation, we notice that Model 2 is is part of the Rashomon Set if we allow an error margin of 1%. This second model, while achieving similarly strong overall performance, gives a different prediction for client number 10. This problem is reffered to as <strong>predictive multiplicity problem</strong>.
+<br><br>It raises an important question : what would change if we chose the competing model over the best model? Perhaps, Model 2 is more interpretable, more stable and might even be preferable to Model 1. <br> <br>
 All of these considerations should be carefully analyzed before making any final decisions, especially when these decisions have a direct impact on people's lives, to ensure that each decision can be clearly explained and that individuals can trust that their prediction is final and well-founded. 
 
 """
 rashomon_metrics="""
- • <strong>Rashomon Ratio</strong> - the proportion of models that are included in the Rashomon Set from all trained models <br>
- • <strong>Rashomon Pattern Ratio</strong> - ...
+ • <strong>Rashomon Ratio</strong> - the proportion of models that are included in the Rashomon Set from all trained models. <br>
+ • <strong>Rashomon Pattern Ratio</strong> - ... <br>
+ • <strong>Ambiguity</strong> - number of individual predictions that could change over the set of competing models.<br>
+ • <strong>Probabilistic Ambiguity</strong> - has the same interpretation as Ambiguity but takes and additional paremeter (delta), which is used to distinguish conflicting predictions based on their probability values.<br>
+ • <strong>Discrepancy</strong> - the maximum number of predictions that would change if another competing model was chosen.<br>
+ • <strong>Probabilistic Discrepancy</strong> - has the same interpretation as Discrepancy but takes and additional paremeter (delta), which is used to distinguish conflicting predictions based on their probability values.<br>
+ • <strong>VPR (Viable Prediction Range)</strong> - for each observation, it is calculated as [min probability; max probability] predicted by all models from the Rashomon Set. Wide VPR suggests high uncertainty.<br>
+ • <strong>Agreement Rate</strong> - for each observation, it is calculated as the proportion of models, which made the same class prediction as the base model. Agreement rate = 1 suggests that all models agreed with the base model.<br>
+ • <strong>Percent Agreement</strong> - for each model in the Rashomon Set, it is calculated as the proportion of observations for which the model and the base model made the same predictions.<br>
+ • <strong>Rashomon Capacity</strong> - ...
+
 """
 
 
-intersection_definition =""
+rashomon_intersection_definition ="""
+To further analyze the concept of the Rashomon Set, we introduce an additional apporach - the Rashomon Intersection.
+It is based on the idea that one may want to maximize not just one, but two evaluation metrics.
+Let's consider the situation illustrated by the diagram on the right. 
+While we can analyze two separate Rashomon Sets (for accuracy and recall), we may also be interested in which of our models achieved similarly high scores in metrics. 
+According to the chart, Models 3 and 4 present good scores in both metrics, so they are included in the Rashomon Intersection. 
+On the other hand, Models 1, 2, and 5 did not achieve high scores in both metrics, only in one, so they are not part of the Intersection.
+"""
+
+bibliography ="""
+1. <a href="https://dl.acm.org/doi/10.5555/3524938.3525566" target="_blank">Definition of predictive multiplicity and the Rashomon Set for classification problems</a> <br>
+2. <a href="https://dl.acm.org/doi/10.1609/aaai.v37i9.26227" target="_blank">Definitions of the Rashomon Set metrics in probabilistic classification</a> <br>
+3. <a href="https://dl.acm.org/doi/10.5555/3600270.3602371" target="_blank">Rashomon Capacity</a><br>
+4. <a href="https://link.springer.com/chapter/10.1007/978-981-99-1521-7_7" target="_blank">Weighted Sum in multi-objective optimization</a><br>
+5. <a href="https://link.springer.com/chapter/10.1007/3-540-27659-9_1" target="_blank">Multi-objective optimization</a><br>
+6. <a href="https://dl.acm.org/doi/10.1145/3610536" target="_blank">Pareto Front</a><br>
+"""
 

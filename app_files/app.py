@@ -62,73 +62,146 @@ if st.session_state.strona == "home":
     st.markdown(f'<div class="overview_descr"> {front_page_descriptions.front_page_overview} </div>', unsafe_allow_html=True)
     st.markdown('<div class="section_title"> 🖳 Application overview </div>', unsafe_allow_html=True)
     st.markdown(f'<div class="section_descr"> {front_page_descriptions.package_overview} </div>', unsafe_allow_html=True)
-    st.markdown('<div class="section_title"> The Rashomon Set concept </div>', unsafe_allow_html=True)
-    with st.container(key="white_cont"):
-        col1, col2 = st.columns(2)
-        with col2:
-            st.markdown(f'<div class ="rashomon_style"> {front_page_descriptions.rashomon_set_definition} </div>', unsafe_allow_html=True)
-        with col1:
 
-            img = Image.open(root_path/"app_files"/"pics"/"rashomon.jpg")
-            st.image(img)
+    with st.container(key = "rashomon_background"):
+        st.markdown('<div class="section_title_rashomon_and_int"> &nbsp; The Rashomon Set concept </div>', unsafe_allow_html=True)
+        with st.container(key="white_cont"):
+            col1, col2 = st.columns(2)
+            with col2:
+                st.markdown(f'<div class ="rashomon_style"> {front_page_descriptions.rashomon_set_definition} </div>', unsafe_allow_html=True)
+            with col1:
 
-        st.markdown(f'<div class ="rashomon_question"> Why is that so important? </div>', unsafe_allow_html=True)
-        st.markdown(f'<div class ="rashomon_style_question"> {front_page_descriptions.rashomon_set_situation} </div>', unsafe_allow_html=True)
+                img = Image.open(root_path/"app_files"/"pics"/"rashomon.jpg")
+                st.image(img)
 
-    st.markdown('<div class="section_title no_margin"> 🕮 The Rashomon Set metrics </div>', unsafe_allow_html=True)
-    st.markdown('<div class="section_descr_metrics"> You can expand this section to access an intuitive description of metrics that were used to assess the differences between models and the Rashomon Set properties. Formal definitions can be found in the articles linked at the bottom of this page. </div>', unsafe_allow_html=True)
+            st.markdown(f'<div class ="rashomon_question"> Why is that so important? </div>', unsafe_allow_html=True)
+            st.markdown(f'<div class ="rashomon_style_question"> {front_page_descriptions.rashomon_set_situation} </div>', unsafe_allow_html=True)
 
-    st.markdown("""
-    <style>
-    [data-testid="stExpander"] details summary p,
-    [data-testid="stExpander"] details summary div,
-    .st-emotion-cache-1cpxqw2 {
-        font-size: 1.4vw !important;
-        color: #16476A !important;
-        font-weight: 500 !important;
-        font-family: 'Inter', sans-serif !important;
-    }
+        st.markdown('<div class="section_title_rashomon_and_int no_margin"> &nbsp; 🖩 The Rashomon Set metrics </div>', unsafe_allow_html=True)
+        st.markdown('<div class="section_descr_metrics"> You can expand this section to access an intuitive description of metrics that were used to assess the differences between models and the Rashomon Set properties. Formal definitions can be found in the articles linked at the bottom of this page. </div>', unsafe_allow_html=True)
 
-    /* 2. USUŃ BORDER Z CAŁEGO EXPANDERA */
-    [data-testid="stExpander"] {
-        border: none !important;
-        background-color: transparent !important;
-        box-shadow: none !important;
-        margin: 0 !important;
-        padding: 0 !important;
-    }
+        st.markdown("""
+        <style>
+        [data-testid="stExpander"] details summary p,
+        [data-testid="stExpander"] details summary div,
+        .st-emotion-cache-1cpxqw2 {
+            font-size: 1.4vw !important;
+            color: white !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+        }
 
-    /* 3. USUŃ BORDER Z WNĘTRZA */
-    [data-testid="stExpander"] > div,
-    [data-testid="stExpander"] details,
-    [data-testid="stExpander"] details > div {
-        border: none !important;
-        background-color: transparent !important;
-        box-shadow: none !important;
-    }
+        /* 2. USUŃ BORDER Z CAŁEGO EXPANDERA */
+        [data-testid="stExpander"] {
+            border: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-    /* 4. STYL DLA ZAWARTOSCI EXPANDERA */
-    [data-testid="stExpander"] .section_descr {
-        background-color: white;
-        border-radius: 0.6rem;
-        padding: 1.2vw;
-        margin-top: 0vw;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
+        /* 3. USUŃ BORDER Z WNĘTRZA */
+        [data-testid="stExpander"] > div,
+        [data-testid="stExpander"] details,
+        [data-testid="stExpander"] details > div {
+            border: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
 
-    /* 5. IKONA EXPANDERA */
-    [data-testid="stExpander"] summary svg {
-        width: 28px !important;
-        height: 28px !important;
-        color: #16476A !important;
-        fill: #16476A !important;
-    }
-    </style>
-""", unsafe_allow_html=True)
-    with st.expander(label="Expand for details →", expanded=False):
+        /* 4. STYL DLA ZAWARTOSCI EXPANDERA */
+        [data-testid="stExpander"] .section_descr {
+            background-color: white;
+            border-radius: 0.6rem;
+            padding: 1.2vw;
+            margin-top: 0vw;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 5. IKONA EXPANDERA */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: white !important;
+            fill: white !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+        with st.expander(label="Expand for details →", expanded=False):
+            
+            st.markdown(f'<div class="section_descr"> {front_page_descriptions.rashomon_metrics} </div>', unsafe_allow_html=True)
+
         
-        st.markdown(f'<div class="section_descr"> {front_page_descriptions.rashomon_metrics} </div>', unsafe_allow_html=True)
 
+    # Intersection ovewview ------------------------------------------------
+    with st.container(key = "intersection_background"):
+        st.markdown('<div class="section_title_rashomon_and_int"> &nbsp; The Rashomon Intersection concept </div>', unsafe_allow_html=True)
+        with st.container(key="white_cont_int"):
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown(f'<div class ="intersection_style"> {front_page_descriptions.rashomon_intersection_definition} </div>', unsafe_allow_html=True)
+            with col2:
+
+                img = Image.open(root_path/"app_files"/"pics"/"intersection.jpg")
+                st.image(img)
+        st.markdown('<div class="section_title_rashomon_and_int no_margin"> &nbsp; 🖩 The Rashomon Intersection metrics </div>', unsafe_allow_html=True)
+        st.markdown('<div class="section_descr_metrics">As the Rashomon Intersection is defined as the intersection of two Rashomon Sets, all metrics from the Rashomon Set also apply. In addition, we compare the Rashomon Intersection with traditional methods for analyzing the multi-objective optimization problems, such as the Pareto Front.  </div>', unsafe_allow_html=True)
+
+    with st.container(key = "bibliography_background"):
+        st.markdown('<div class="section_title_rashomon_and_int"> &nbsp; 🕮 References </div>', unsafe_allow_html=True)
+        st.markdown('<div class="section_descr_metrics"> This section provides links to articles and books that were used while creating the package and analyze the Rashomon Set properties. Please expand for more details. </div>', unsafe_allow_html=True)
+        st.markdown("""
+        <style>
+        [data-testid="stExpander"] details summary p,
+        [data-testid="stExpander"] details summary div,
+        .st-emotion-cache-1cpxqw2 {
+            font-size: 1.4vw !important;
+            color: white !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+        }
+
+        /* 2. USUŃ BORDER Z CAŁEGO EXPANDERA */
+        [data-testid="stExpander"] {
+            border: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        /* 3. USUŃ BORDER Z WNĘTRZA */
+        [data-testid="stExpander"] > div,
+        [data-testid="stExpander"] details,
+        [data-testid="stExpander"] details > div {
+            border: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        /* 4. STYL DLA ZAWARTOSCI EXPANDERA */
+        [data-testid="stExpander"] .section_descr {
+            background-color: white;
+            border-radius: 0.6rem;
+            padding: 1.2vw;
+            margin-top: 0vw;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 5. IKONA EXPANDERA */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: white !important;
+            fill: white !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+        with st.expander(label="Expand for bibliography →", expanded=False):
+            st.markdown(f'<div class="section_descr"> {front_page_descriptions.bibliography} </div>', unsafe_allow_html=True)
+            
+
+       
 
 # Datasets page configuration ------------------------------------------------------------------------------------
 elif st.session_state.strona == "datasets":

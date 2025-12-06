@@ -90,19 +90,25 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     font-weight: 500;
 }
 
-.st-key-white_cont {
+.st-key-white_cont, .st-key-white_cont_int {
     background-color: white;
-    border-radius: 0.6rem;
+    border-radius: 0.2rem;
     padding-bottom: 1.3vw;
     padding-top: 1.3vw;
     padding-left: 1.3vw;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
 .st-key-white_cont0, .st-key-white_cont1, .st-key-white_cont2, .st-key-white_cont3,.st-key-white_cont4, .st-key-white_cont5, .st-key-white_cont6, .st-key-white_cont7, .st-key-white_cont8 {
-    background-color: white;
+    background:
+    linear-gradient(
+    45deg,
+    hsl(204, 65%, 26%), 
+    hsl(204, 60%, 38%)) !important;;
     border-radius: 0.6rem;
     padding: 1.5vw;
+    padding-top: 0;
+    margin-top: 1.6vw;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -126,9 +132,16 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     border-radius: 0;
 }
 .overview_descr{
-    color:#557D95 ;
+    color:white ;
+    background: linear-gradient(
+    45deg,
+    hsl(204, 65%, 26%), 
+    hsl(204, 60%, 38%)) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 0.6rem;
     font-family: 'Inter', sans-serif;
     font-size : 1.3vw;
+    padding: 1.3vw;
     margin-top:0.3rem;
     text-align: justify;
 
@@ -161,7 +174,7 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 }
 
 .section_descr_metrics{
-    color: #557D95;
+    color: #f5f5f5;
     font-family: 'Inter', sans-serif;
     font-size : 1.3vw;
     margin-top:0.3rem;
@@ -171,6 +184,30 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     text-align: justify;
 
 }
+
+.st-key-rashomon_background, .st-key-intersection_background, .st-key-bibliography_background{
+    background: linear-gradient(
+    45deg,
+    hsl(204, 65%, 26%), 
+    hsl(204, 60%, 38%)) !important;
+    margin-top: 1.3vw;
+    padding: 1.3vw;
+    padding-top: 0vw;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section_title_rashomon_and_int{
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size : 2vw;
+    margin-top:1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+
+   
 
 .rashomon_style{
     padding-right: 1.3vw;
@@ -192,6 +229,16 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 
 }
 
+.intersection_style{
+    padding-left: 1.3vw;
+    color: #557D95;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.3vw;
+    font-weight: 500;
+    text-align: justify;
+
+}
+
 .rashomon_question{
     padding: 1.3vw;
     padding-bottom: 0vw;
@@ -205,7 +252,7 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 
 .key_style{
     box-sizing: border-box;
-    color: #16476A;
+    color: white;
     font-family: 'Inter', sans-serif;
     font-size : 1.3vw;
     font-weight: 600;
@@ -216,12 +263,11 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 .data_descr{
     box-sizing: border-box;
     padding-left: 1.5vw;
-    color: #557D95;
+    color: #e0e0e0;
     font-family: 'Inter', sans-serif;
     font-size : 1.3vw;
     font-weight: 500;
     text-align: justify;
-    background-color: #f5f5f5;
     padding-right: 1.3vw;
 
 }
@@ -230,3 +276,14 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     margin-bottom: 1.3vw !important;
 }
 
+
+.dataset_title{
+    color: white;
+    border-bottom: solid 1px white;
+    font-family: 'Inter', sans-serif;
+    font-size : 2vw;
+    margin-top:1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+
+}

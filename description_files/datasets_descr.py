@@ -28,7 +28,9 @@ HR_dataset_dict = {
             "training_hours: Training hours completed"
         ],
     "Note" : "Data for this dataset is the train data from source since test data did not have assigned target The train-test split was performed before training the models.",
-    "Characteristics": "This dataset represents a real-life business use case. Companies may want to identify candidates genuinely interested in working there after training, which helps reduce costs, save time, and improve training quality and course planning. There is a slight imbalance in class distribution, with the majority in 0 class - candidates who are not looking for a job change. Some features in the dataset exhibit skewed distributions, for example training_hours. Some information about the company is missing, affecting approximately 30% of records."
+    "Characteristics": "This dataset represents a real-life business use case. Companies may want to identify candidates genuinely interested in working there after training, which helps reduce costs, save time, and improve training quality and course planning. There is a great class imbalance, with the majority observations from class 0 - candidates who are not looking for a job change. Some features in the dataset exhibit skewed distributions, for example training_hours. Some information about the company is missing making up for around 8% of NaN values.",
+    "path": "hr_job_change_ds.csv",
+    "target_col" : "target"
 }
 
 credit_dict = {
@@ -56,6 +58,8 @@ credit_dict = {
     ],
     "Note" : "Data from this dataset was saved from Kaggle in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process",
     "Characteristics": "This dataset represents a real-life business use case. A financial institution can face challanges related to the predictive multiplicity while assigning the client's credit score.One model can assign a High credit score while the other will assign Low chances of getting a loan for the same person, who can be wrongfully harmed by the poor decision-making process. Other challenges that may arise from this dataset are class imbalance and feature correlation. Most observations were assigned the High credit score category, therefore ML algorithms may struggle to differentiate between Average and Low categories. Considering only numerical features, there is a high correlation between age and income present in the data, which can propose another challenge for the model to overcome.",
+    "path" : "credit_score.csv",
+    "target_col" : "Credit Score"
 }
 
 
@@ -88,7 +92,9 @@ breast_cancer_dict = {
 
     ],
     "Note" : "Data from this dataset was saved from Kaggle in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process. Additionally target column was encoded to numerical values : M = 1 and B=0 for training purposes.",
-    "Characteristics": "This dataset is a real life example of a situation when predictive multiplicity can directly affect a human's life. The lack of analysis of competing models and their conflicting predictions can lead to the overlooking and in consequence the lack of correct treatment for the patient. Although this data is not severely imbalanced (around 65-35 proportion), it has some highly correlated columns such as perimeter and radius mean, which can propose a new challenge for ML algorithms."
+    "Characteristics": "This dataset is a real life example of a situation when predictive multiplicity can directly affect a human's life. The lack of analysis of competing models and their conflicting predictions can lead to the overlooking and in consequence the lack of correct treatment for the patient. Although this data is not severely imbalanced (around 65-35 proportion), it has some highly correlated columns such as perimeter and radius mean, which can propose a new challenge for ML algorithms.",
+    "path" : "breast_cancer.csv",
+    "target_col" : "diagnosis"
 }
 
 heart_dict ={
@@ -120,7 +126,9 @@ heart_dict ={
 
     ],
     "Note" : "Data from this dataset was saved from Kaggle in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process.",
-    "Characteristics": "This data is the representation or a real life situation when predictive multiplicity should be carefully examined before the decision-making process, as it may have tragic consequences. One model can predict that a person does not have heart disease, while another predicts that they do. If the individual is actually seriously ill but we rely on a model that predicts no disease, the misdiagnosis puts the person in serious risk. For decision-makers it is important to minimize false negative predictions to avoid fatal outcomes."
+    "Characteristics": "This data is the representation or a real life situation when predictive multiplicity should be carefully examined before the decision-making process, as it may have tragic consequences. One model can predict that a person does not have heart disease, while another predicts that they do. If the individual is actually seriously ill but we rely on a model that predicts no disease, the misdiagnosis puts the person in serious risk. This dataset has well balanced classes and does not show signs of highly correlated features.",
+    "path" : "heart.csv",
+    "target_col" : "HeartDisease"
 
 }
 
@@ -150,7 +158,9 @@ compas_dict ={
         "Misdemeanor - indicator whether defendant has committed misdemeanor offense"
     ],
     "Note" : "Data from this dataset was saved from Kaggle in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process. You can find this dataset at the source above, file used propublicaCompassRecividism_data_fairml.csv. The dataset contains fewer features, and all variables have been converted to numeric format to prevent data leakage (which occurs in other datasets). We dropped the Score_factor column since it is the output of the COMPAS algorithm which is biased in favor of white defendants.",
-    "Characteristics": "This data is the representation or a real life situation when predictive multiplicity should be carefully examined before the decision-making process, as it may have harmful consequences. One model can predict that a defendant will commit a crime in the next two-year period, while another predicts that they will not. It is crucial for the model to not be biased in favor of any race so relying on model scores itself might be unfair to individuals. Examining predictive multiplicity allows us to identify where different models disagree and to make more informed, fair, and accountable decisions which is crucial in this case."
+    "Characteristics": "This data is the representation or a real life situation when predictive multiplicity should be carefully examined before the decision-making process, as it may have harmful consequences. One model can predict that a defendant will commit a crime in the next two-year period, while another predicts that they will not. It is crucial for the model to not be biased in favor of any race so relying on model scores itself might be unfair to individuals. This dataset has well balanced classes and does not show signs of highly correlated features that would pose an additional challenge for ML algorithms.",
+    "path" : "compas_violent.csv",
+    "target_col" : "Two_yr_Recidivism"
 }
 
 glass_dict ={
@@ -179,7 +189,9 @@ glass_dict ={
 
     ],
     "Note" : "Data from this dataset was saved from Kaggle in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process.",
-    "Characteristics" :"Features in this dataset are highly correlated, with the highest positive Pearson correlation value being 0.81 (between Ca and RI) and the strongest negative -0.71 value (between Mg and RI). This might be problematic for some machine learning models, especially linear models like linear regression. This dataset also shows class imbalance with most observations from classes 0 and 1."
+    "Characteristics" :"Features in this dataset are highly correlated, with the highest positive Pearson correlation value being 0.81 (between Ca and RI) and the strongest negative -0.74 value (between Mg and Type). This might be problematic for some machine learning models, especially linear models like linear regression. This dataset also shows class imbalance with most observations from classes 1 and 2.",
+    "path" : "glass.csv",
+    "target_col" : "Type"
 }
 
 letter_dict ={
@@ -214,7 +226,9 @@ letter_dict ={
         "yegvx : correlation of y-ege with x"
     ],
     "Note" :"Data from this dataset was saved from UCI in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process. All feature descriptions were copied from the dataset source.",
-    "Characteristics" : "This dataset is an example of a multiclassification dataset with a great number of classes, many of which occur very rarely. That is an additionall challenge for ML algorithms, especially to differ between the rare classes."
+    "Characteristics" : "This dataset is an example of a multiclassification dataset with a great number of classes, many of which occur very rarely. That is an additionall challenge for ML algorithms, especially to differ between the rare classes.",
+    "path" : "letter_recognition.csv",
+    "target_col" : "letter"
 }
 
 yeast_dict ={
@@ -244,7 +258,9 @@ yeast_dict ={
 
     ],
     "Note" :"Data from this dataset was saved from UCI in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process. All feature descriptions were copied from the dataset source.",
-    "Characteristics" :"This dataset may be particularly interesting as it is an example of a multiclass classification problem with multiple classes, some of which occur very infrequently. That could impose a challenge for ML algorithms to correctly detect those rare classes."
+    "Characteristics" :"This dataset may be particularly interesting as it is an example of a multiclass classification problem with multiple classes (26). In addition some features as width, height etc are highly correlated which can pose another challenge for ML algorithms",
+    "path": "yeast.csv",
+    "target_col" : "localization_site"
 }
 
 def return_datasets_descriptions():

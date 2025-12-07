@@ -54,6 +54,7 @@ section[data-testid="stSidebar"] .stButton button {
 
 
 
+
 /* Linia separatora w sidebar */
 section[data-testid="stSidebar"] hr {
     border-color: darkgray !important;
@@ -78,6 +79,18 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-mark-text {
 section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     background-color: #ddd !important;
 }
+
+.stSelectbox div[data-baseweb="select"] > div:first-child {
+            background: linear-gradient(
+            45deg,
+             hsl(204, 45%, 50%),
+             hsl(204, 50%, 55%)) !important;
+            border-color: #2d408d;
+            color:white !important;
+            font-size: 15;
+            margin : 0.2rem;
+            width: 90% !important;
+        }
 
 
 /* Sidebar text fonts ------------------------------------------------- */
@@ -286,4 +299,9 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     margin-bottom: 0.3rem;
     font-weight: 500;
 
+}
+
+
+.st-key-padding_cont_plot{
+    padding: 1.2vw;
 }

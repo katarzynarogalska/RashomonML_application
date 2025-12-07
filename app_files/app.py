@@ -19,6 +19,16 @@ BINARY_METRICS = ["accuracy", "balanced_accuracy", "roc_auc", "average_precision
     "precision_micro", "precision_weighted", "recall", "recall_macro", "recall_micro", "recall_weighted",
     "f1", "f1_macro", "f1_micro", "f1_weighted"]
 
+DATASETS = {
+    "HR Job Change" : "hr",
+    "Credit Score" : "credit",
+    "Breast Cancer" : "breast_cancer",
+    "COMPAS" : "compas",
+    "Heart Disease" : "heart",
+    "Glass Types" : "glass",
+    "Letter Recognition" : "letter_recognition",
+    "Yeast" : "yeast"
+}
 css_path = current_dir/ "style.css"
 
 st.set_page_config(
@@ -32,6 +42,9 @@ with open(css_path) as f:
 
 if 'strona' not in st.session_state:
     st.session_state.strona = 'home'
+
+if 'global_dataset' not in st.session_state:
+    st.session_state.global_dataset = ""
 
 def change_page(page):
     st.session_state.strona = page
@@ -53,6 +66,23 @@ def global_nav():
         change_page("intersection")
 
     st.sidebar.markdown("---")
+   
+    options = [""] + list(DATASETS.keys())
+
+    def update_dataset():
+        st.session_state.global_dataset = st.session_state.temp_selectbox
+    
+    selected_dataset = st.sidebar.selectbox(
+        "Choose a dataset to analyze",
+        options=options, 
+        key="temp_selectbox",  
+        index=options.index(st.session_state.global_dataset) if st.session_state.global_dataset in options else 0,
+        on_change=update_dataset
+    )
+    
+    st.session_state.global_dataset = selected_dataset
+
+   
 
 # Home page configuration --------------------------------------------------------------------------------------
 if st.session_state.strona == "home":
@@ -212,42 +242,45 @@ elif st.session_state.strona == "rashomon":
     global_nav()
     #najpierw uzytkownik niech wybierze zbior danych i na podstawie tego bedzie mial opcje base metric z opcji binary albo multiclass
 
-    task_type = 'binary'
-    if task_type == 'binary':
-        base_metric = st.sidebar.selectbox("Choose base metric:", BINARY_METRICS)
-    elif task_type == 'multiclass':
-        base_metric =  st.sidebar.selectbox("Choose base metric:", MULTICLASS_METRICS)
+    if st.session_state.global_dataset!="":
+        task_type = 'binary'
+        if task_type == 'binary':
+            base_metric = st.sidebar.selectbox("Choose base metric:", BINARY_METRICS)
+        elif task_type == 'multiclass':
+            base_metric =  st.sidebar.selectbox("Choose base metric:", MULTICLASS_METRICS)
 
-    epsilon = st.sidebar.slider("Choose epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
+        epsilon = st.sidebar.slider("Choose epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
 
+   
     rashomon_page.show()
 
 
 elif st.session_state.strona == "intersection":
     global_nav()
 
-    task_type = 'binary'
-    if task_type == 'binary':
-        metric1 = st.sidebar.selectbox("Choose first metric:", BINARY_METRICS)
-        possible_metric2 = [m for m in BINARY_METRICS if m != metric1]
-        metric2 = st.sidebar.selectbox("Choose second metric:", possible_metric2)
-    elif task_type == 'multiclass':
-        metric1 = st.sidebar.selectbox("Choose first metric:", MULTICLASS_METRICS)
-        possible_metric2 = [m for m in MULTICLASS_METRICS if m != metric1]
-        metric2 = st.sidebar.selectbox("Choose second metric:", possible_metric2)
+    if st.session_state.global_dataset!="":
+        task_type = 'binary'
+        if task_type == 'binary':
+            metric1 = st.sidebar.selectbox("Choose first metric:", BINARY_METRICS)
+            possible_metric2 = [m for m in BINARY_METRICS if m != metric1]
+            metric2 = st.sidebar.selectbox("Choose second metric:", possible_metric2)
+        elif task_type == 'multiclass':
+            metric1 = st.sidebar.selectbox("Choose first metric:", MULTICLASS_METRICS)
+            possible_metric2 = [m for m in MULTICLASS_METRICS if m != metric1]
+            metric2 = st.sidebar.selectbox("Choose second metric:", possible_metric2)
 
-    metrics = [metric1, metric2]
+        metrics = [metric1, metric2]
 
-    epsilon = st.sidebar.slider("Choose epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
+        epsilon = st.sidebar.slider("Choose epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
 
-    weighted_sum_method = st.sidebar.radio("Choose weighted sum method:", ["custom_weights", "entropy", "critic"])
-    if weighted_sum_method == 'custom_weights':
-        weight1 = weight2 = None
-        #czy tu jest opcja zeby sie zmienialy automatycznie jedna i druga tak zeby sie sumowaly do 1?
-        st.sidebar.write("Set custom weights:")
-        weight1 = st.sidebar.number_input(f"Weight for metric {metric1}:", min_value=0.0, value=0.5, step=0.01)
-        weight2 = st.sidebar.number_input(f"Weight for metric {metric2}:", min_value=0.0, value=0.5, step=0.01)
-        custom_weights = (weight1, weight2)
+        weighted_sum_method = st.sidebar.radio("Choose weighted sum method:", ["custom_weights", "entropy", "critic"])
+        if weighted_sum_method == 'custom_weights':
+            weight1 = weight2 = None
+            #czy tu jest opcja zeby sie zmienialy automatycznie jedna i druga tak zeby sie sumowaly do 1?
+            st.sidebar.write("Set custom weights:")
+            weight1 = st.sidebar.number_input(f"Weight for metric {metric1}:", min_value=0.0, value=0.5, step=0.01)
+            weight2 = st.sidebar.number_input(f"Weight for metric {metric2}:", min_value=0.0, value=0.5, step=0.01)
+            custom_weights = (weight1, weight2)
 
     intersection_page.show()
     

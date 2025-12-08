@@ -58,7 +58,7 @@ def plot_correlation_matrix(data):
     ))
     fig.update_layout(
         title=dict(
-            text="Pearsons correlation Matrix",
+            text="Pearsons Correlation Matrix",
             font=dict(
                 family="Inter, sans-serif",
                 size=14,

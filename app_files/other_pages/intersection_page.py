@@ -2,18 +2,36 @@ import streamlit as st
 
 def show():
     st.title("Intersection Page")
-    if st.session_state.global_dataset is None:
-        st.warning("Please select a dataset for analysis. You may choose a dataset from the list on the sidebar.")
-    elif st.session_state.metric1 is None or st.session_state.metric2 is None :
-        st.warning("Missing base metric. Please expand the 'Specify parameters' section in order to provide the necessary parameters, such as the base metrics and epsilon")
-  
-    
-    else:
-        st.markdown("SELECTED DATASET:")
-        st.markdown(st.session_state.global_dataset)
-        st.markdown("Selected metric")
-        st.markdown(st.session_state.metric1)
-        st.markdown(st.session_state.metric2)
-        st.markdown("Selected epsilon")
-        st.markdown(st.session_state.epsilon)
-        st.markdown(st.session_state.weighted_sum_method)
+    autogluon_tab, h2o_tab = st.tabs(["AutoGluon", "H2O"])
+
+    with autogluon_tab:
+        st.header("AutoGluon Analysis")
+        if st.session_state.global_dataset is None:
+            st.warning("Please select a dataset for analysis. You may choose a dataset from the list on the sidebar.")
+        elif st.session_state.metric1 is None or st.session_state.metric2 is None:
+            st.warning("Missing base metric. Please expand the 'Specify parameters' section in order to provide the necessary parameters, such as the base metrics and epsilon")
+        else:
+            st.markdown("SELECTED DATASET:")
+            st.markdown(st.session_state.global_dataset)
+            st.markdown("Selected metric")
+            st.markdown(st.session_state.metric1)
+            st.markdown(st.session_state.metric2)
+            st.markdown("Selected epsilon")
+            st.markdown(st.session_state.epsilon)
+            st.markdown(st.session_state.weighted_sum_method)
+
+    with h2o_tab:
+        st.header("H2O Analysis")
+        if st.session_state.global_dataset is None:
+            st.warning("Please select a dataset for analysis.")
+        elif st.session_state.metric1 is None or st.session_state.metric2 is None :
+            st.warning("Missing base metric. Please expand the 'Specify parameters' section in order to provide the necessary parameters, such as the base metrics and epsilon")
+        else:
+            st.markdown("SELECTED DATASET:")
+            st.markdown(st.session_state.global_dataset)
+            st.markdown("Selected metric")
+            st.markdown(st.session_state.metric1)
+            st.markdown(st.session_state.metric2)
+            st.markdown("Selected epsilon")
+            st.markdown(st.session_state.epsilon)
+            st.markdown(st.session_state.weighted_sum_method)

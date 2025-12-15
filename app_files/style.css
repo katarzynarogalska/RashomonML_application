@@ -350,3 +350,34 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     padding: 0.8rem 2.5rem;
 }
 
+/* Autogluon and H2O tabs  ------------------------------------------------- */
+
+.stTabs [data-baseweb="tab-list"] {
+    width: 100%;
+    gap: 0; 
+    margin: 0;
+    padding: 0;
+}
+
+.stTabs [data-baseweb="tab"] {
+    height: 50px;
+    white-space: pre-wrap;
+    background-color: #f0f2f6;
+    font-weight: 900;
+    flex: 1;
+    margin: 0;
+    border-radius: 0; 
+}
+
+.stTabs [aria-selected="true"] {
+    background-color: #eef1f4;
+    font-weight: 900;
+}
+
+.stTabs [data-baseweb="tab-list"] button {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    font-weight: 900;
+}
+

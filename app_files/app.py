@@ -40,11 +40,32 @@ st.set_page_config(
 with open(css_path) as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
+
 if 'strona' not in st.session_state:
     st.session_state.strona = 'home'
 
 if 'global_dataset' not in st.session_state:
-    st.session_state.global_dataset = ""
+    st.session_state.global_dataset = None
+
+if 'weighted_sum_method' not in st.session_state:
+    st.session_state.weighted_sum_method = None
+
+if 'custom_weights' not in st.session_state:
+    st.session_state.custom_weights = None
+if 'metric1' not in st.session_state:
+    st.session_state.metric1 = None
+
+if 'metric2' not in st.session_state:
+    st.session_state.metric2 = None
+
+if 'task_type' not in st.session_state:
+    st.session_state.task_type = None
+
+if 'base_metric' not in st.session_state:
+    st.session_state.base_metric = None
+
+if 'epsilon' not in st.session_state:
+    st.session_state.epsilon = None
 
 def change_page(page):
     st.session_state.strona = page
@@ -67,28 +88,38 @@ def global_nav():
 
     st.sidebar.markdown("---")
    
-    options = [""] + list(DATASETS.keys())
+    options = ["--choose--"] + list(DATASETS.keys())
 
     def update_dataset():
-        st.session_state.global_dataset = st.session_state.temp_selectbox
+        #st.session_state.global_dataset = st.session_state.temp_selectbox
+
+        if st.session_state.global_dataset in ["HR Job Change", "COMPAS", "Breast Cancer", "Heart Disease"]:
+            st.session_state.task_type = "binary"
+        elif st.session_state.global_dataset in ["Credit Score" , "Glass Types" , "Letter Recognition" ,"Yeast"]:
+            st.session_state.task_type ="multiclass"
+        else:
+            st.session_state.task_type = None
     
-    selected_dataset = st.sidebar.selectbox(
+   
+    st.session_state.global_dataset = st.sidebar.selectbox(
         "Choose a dataset to analyze",
         options=options, 
         key="temp_selectbox",  
         index=options.index(st.session_state.global_dataset) if st.session_state.global_dataset in options else 0,
         on_change=update_dataset
-    )
-    
-    st.session_state.global_dataset = selected_dataset
+        )
+    st.sidebar.markdown("---")
+
+    if st.session_state.global_dataset == "--choose--":
+        st.session_state.global_dataset = None
 
    
 
 # Home page configuration --------------------------------------------------------------------------------------
 if st.session_state.strona == "home":
     global_nav()
-    st.markdown('<div class="homepage_title"> Welcome to RashoML </div>', unsafe_allow_html=True)
-    st.markdown('<div class="homepage_subtitle"> Compare. Understand. Decide. </div>', unsafe_allow_html=True)
+    st.markdown('<div class="homepage_title"> Welcome to ARSA  </div>', unsafe_allow_html=True)
+    st.markdown('<div class="homepage_subtitle"> Automated Rashomon Set Analysis  </div>', unsafe_allow_html=True)
     st.markdown(f'<div class="overview_descr"> {front_page_descriptions.front_page_overview} </div>', unsafe_allow_html=True)
     st.markdown('<div class="section_title"> 🖳 Application overview </div>', unsafe_allow_html=True)
     st.markdown(f'<div class="section_descr"> {front_page_descriptions.package_overview} </div>', unsafe_allow_html=True)
@@ -103,9 +134,11 @@ if st.session_state.strona == "home":
 
                 img = Image.open(root_path/"app_files"/"pics"/"rashomon.jpg")
                 st.image(img)
-
-            st.markdown(f'<div class ="rashomon_question"> Why is that so important? </div>', unsafe_allow_html=True)
-            st.markdown(f'<div class ="rashomon_style_question"> {front_page_descriptions.rashomon_set_situation} </div>', unsafe_allow_html=True)
+                
+          
+            with st.container(key = "blue_cont"):
+                    with st.expander(label="Why is that so important?", expanded=False):
+                        st.markdown(f'<div class ="rashomon_style_question_white"> {front_page_descriptions.rashomon_set_situation} </div>', unsafe_allow_html=True)
 
         st.markdown('<div class="section_title_rashomon_and_int no_margin"> &nbsp; 🖩 The Rashomon Set metrics </div>', unsafe_allow_html=True)
         st.markdown('<div class="section_descr_metrics"> You can expand this section to access an intuitive description of metrics that were used to assess the differences between models and the Rashomon Set properties. Formal definitions can be found in the articles linked at the bottom of this page. </div>', unsafe_allow_html=True)
@@ -242,15 +275,89 @@ elif st.session_state.strona == "rashomon":
     global_nav()
     #najpierw uzytkownik niech wybierze zbior danych i na podstawie tego bedzie mial opcje base metric z opcji binary albo multiclass
 
-    if st.session_state.global_dataset!="":
-        task_type = 'binary'
-        if task_type == 'binary':
-            base_metric = st.sidebar.selectbox("Choose base metric:", BINARY_METRICS)
-        elif task_type == 'multiclass':
-            base_metric =  st.sidebar.selectbox("Choose base metric:", MULTICLASS_METRICS)
+    if st.session_state.global_dataset is not None:
+       
+        st.markdown("""
+        <style>
+        [data-testid="stExpander"] details summary p,
+        [data-testid="stExpander"] details summary div,
+        .st-emotion-cache-1cpxqw2 {
+            font-size: 1.3vw !important;
+            color: #16476A !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+            width: 90% !important;                
+            margin: 0.2rem 0 !important;          
+        
+            cursor: pointer;
+            }
+        [data-testid="stExpander"] {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-        epsilon = st.sidebar.slider("Choose epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
+        /* 2. USUŃ BORDER Z CAŁEGO EXPANDERA */
+        [data-testid="stExpander"] {
+            border: solid 1px lightgray !important;
+            border-radius : 6px;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
+        /* 3. USUŃ BORDER Z WNĘTRZA */
+        [data-testid="stExpander"] > div,
+        [data-testid="stExpander"] details,
+        [data-testid="stExpander"] details > div {
+            border: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
+
+        /* 4. STYL DLA ZAWARTOSCI EXPANDERA */
+        [data-testid="stExpander"] .section_descr {
+            background-color: blue;
+            border-radius: 0.6rem;
+            padding: 0vw;
+            margin-top: 0vw;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 5. IKONA EXPANDERA */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: #16476A !important;
+            fill: #16476A !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+        with st.sidebar.expander("Specify parameters", expanded=False):
+            if st.session_state.global_dataset in ["HR Job Change", "COMPAS", "Breast Cancer", "Heart Disease"]:
+                st.session_state.task_type = "binary"
+            elif st.session_state.global_dataset in ["Credit Score", "Glass Types", "Letter Recognition", "Yeast"]:
+                st.session_state.task_type = "multiclass"
+            else:
+                st.session_state.task_type = None
+
+            # Teraz ustaw opcje dla base_metric
+            if st.session_state.task_type is not None:
+                metrics_options = ["-- choose --"] + (BINARY_METRICS if st.session_state.task_type == 'binary' else MULTICLASS_METRICS)
+                
+                st.session_state.base_metric = st.selectbox(
+                    "Base metric:",
+                    options=metrics_options,
+                    index=0,  # domyślnie "-- choose --"
+                    key="base_metric_select"
+                )
+
+                if st.session_state.base_metric == "-- choose --":
+                    st.session_state.base_metric = None
+            else:
+                st.sidebar.write("Please choose a dataset first.")
+
+            st.session_state.epsilon = st.slider("Epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
    
     rashomon_page.show()
 
@@ -258,29 +365,94 @@ elif st.session_state.strona == "rashomon":
 elif st.session_state.strona == "intersection":
     global_nav()
 
-    if st.session_state.global_dataset!="":
-        task_type = 'binary'
-        if task_type == 'binary':
-            metric1 = st.sidebar.selectbox("Choose first metric:", BINARY_METRICS)
-            possible_metric2 = [m for m in BINARY_METRICS if m != metric1]
-            metric2 = st.sidebar.selectbox("Choose second metric:", possible_metric2)
-        elif task_type == 'multiclass':
-            metric1 = st.sidebar.selectbox("Choose first metric:", MULTICLASS_METRICS)
-            possible_metric2 = [m for m in MULTICLASS_METRICS if m != metric1]
-            metric2 = st.sidebar.selectbox("Choose second metric:", possible_metric2)
+    if st.session_state.global_dataset is not None:
+       
+        st.markdown("""
+        <style>
+        [data-testid="stExpander"] details summary p,
+        [data-testid="stExpander"] details summary div,
+        .st-emotion-cache-1cpxqw2 {
+            font-size: 1.3vw !important;
+            color: #16476A !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+            width: 90% !important;                
+            margin: 0.2rem 0 !important;          
+        
+            cursor: pointer;
+            }
+        [data-testid="stExpander"] {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-        metrics = [metric1, metric2]
+        /* 2. USUŃ BORDER Z CAŁEGO EXPANDERA */
+        [data-testid="stExpander"] {
+            border: solid 1px lightgray !important;
+            border-radius : 6px;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-        epsilon = st.sidebar.slider("Choose epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
+        /* 3. USUŃ BORDER Z WNĘTRZA */
+        [data-testid="stExpander"] > div,
+        [data-testid="stExpander"] details,
+        [data-testid="stExpander"] details > div {
+            border: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+        }
 
-        weighted_sum_method = st.sidebar.radio("Choose weighted sum method:", ["custom_weights", "entropy", "critic"])
-        if weighted_sum_method == 'custom_weights':
-            weight1 = weight2 = None
-            #czy tu jest opcja zeby sie zmienialy automatycznie jedna i druga tak zeby sie sumowaly do 1?
-            st.sidebar.write("Set custom weights:")
-            weight1 = st.sidebar.number_input(f"Weight for metric {metric1}:", min_value=0.0, value=0.5, step=0.01)
-            weight2 = st.sidebar.number_input(f"Weight for metric {metric2}:", min_value=0.0, value=0.5, step=0.01)
-            custom_weights = (weight1, weight2)
+        /* 4. STYL DLA ZAWARTOSCI EXPANDERA */
+        [data-testid="stExpander"] .section_descr {
+            background-color: blue;
+            border-radius: 0.6rem;
+            padding: 0vw;
+            margin-top: 0vw;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 5. IKONA EXPANDERA */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: #16476A !important;
+            fill: #16476A !important;
+        }
+        </style>
+    """, unsafe_allow_html=True)
+        with st.sidebar.expander("Specify parameters", expanded=False):
+            if st.session_state.global_dataset in ["HR Job Change", "COMPAS", "Breast Cancer", "Heart Disease"]:
+                st.session_state.task_type = "binary"
+            elif st.session_state.global_dataset in ["Credit Score", "Glass Types", "Letter Recognition", "Yeast"]:
+                st.session_state.task_type = "multiclass"
+            else:
+                st.session_state.task_type = None
+
+            metrics_options = ["-- choose --"] + (BINARY_METRICS if st.session_state.task_type == 'binary' else MULTICLASS_METRICS)
+                
+            m1 = st.selectbox("First metric:", metrics_options, index=0, key="metric1_select")
+            st.session_state.metric1 = None if m1 == "-- choose --" else m1
+
+            possible_metric2 = ["-- choose --"] + [m for m in metrics_options[1:] if m != st.session_state.metric1]
+            metric2_value = st.selectbox("Second metric:", possible_metric2, index=0, key="metric2_select")
+            st.session_state.metric2 = None if metric2_value == "-- choose --" else metric2_value
+           
+
+            st.session_state.epsilon = st.slider("Epsilon:", min_value=0.0, max_value=1.0, value=0.1, step=0.01)
+
+            st.session_state.weighted_sum_method = st.radio("Weighted sum method:", ["custom_weights", "entropy", "critic"])
+
+            if st.session_state.weighted_sum_method == "custom_weights":
+                st.write("Set custom weights:")
+                
+                weight1 = st.number_input(f"Weight for {st.session_state.metric1 or 'Metric 1'}:", min_value=0.0, max_value=1.0, value=0.5, step=0.01, key="weight1_input")
+                # Druga waga automatycznie uzupełnia do 1
+                weight2 = 1.0 - weight1
+                st.number_input(f"Weight for {st.session_state.metric2 or 'Metric 2'}:", min_value=0.0, max_value=1.0, value=weight2, step=0.01, key="weight2_input", disabled=True)
+                st.session_state.custom_weights = (weight1, weight2)
 
     intersection_page.show()
     

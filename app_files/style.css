@@ -10,12 +10,14 @@
 .block-container {
     padding-left: 2.5rem !important;
     padding-right: 2.5rem !important;
+    
     max-width: 100% !important; 
 }
 
 [data-testid="stVerticalBlock"] {
     padding-left: 0 !important;
     padding-right: 0 !important;
+   
 }
 
 
@@ -106,9 +108,9 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 .st-key-white_cont, .st-key-white_cont_int {
     background-color: white;
     border-radius: 0.2rem;
-    padding-bottom: 1.3vw;
-    padding-top: 1.3vw;
-    padding-left: 1.3vw;
+    padding-bottom: 1.2vw;
+    padding-top: 1.2vw;
+    padding-left: 1.2vw;
     /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
 }
 
@@ -153,8 +155,8 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 0.6rem;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
-    padding: 1.3vw;
+    font-size : 1.2vw;
+    padding: 1.2vw;
     margin-top:0.3rem;
     text-align: justify;
 
@@ -176,7 +178,7 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     background-color: white;
     border-radius: 0.6rem;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
+    font-size : 1.2vw;
     margin-top:0.3rem;
     margin-bottom: 0.3rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -189,7 +191,7 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 .section_descr_metrics{
     color: #f5f5f5;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
+    font-size : 1.2vw;
     margin-top:0.3rem;
     margin-bottom: 0rem !important;
     padding: 1.2vw;
@@ -203,11 +205,24 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     45deg,
     hsl(204, 65%, 26%), 
     hsl(204, 60%, 38%)) !important;
-    margin-top: 1.3vw;
-    padding: 1.3vw;
+    margin-top: 1.2vw;
+    padding: 1.2vw;
     padding-top: 0vw;
     border-radius: 0.6rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.st-key-blue_cont{
+    background: linear-gradient(
+    45deg,
+    hsl(204, 65%, 26%), 
+    hsl(204, 60%, 38%)) !important;
+    margin-top: 0.5vw;
+    padding: 1vw;
+    padding-top: 0vw;
+    border-radius: 0.6rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
 }
 
 .section_title_rashomon_and_int{
@@ -220,40 +235,51 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 }
 
 
-   
+
+
 
 .rashomon_style{
-    padding-right: 1.3vw;
+    padding-right: 1.2vw;
     color: #557D95;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
+    font-size : 1.2vw;
     font-weight: 500;
     text-align: justify;
 
 }
 .rashomon_style_question{
-    padding: 1.3vw;
+    padding: 1.2vw;
     padding-top:1.1vw;
     color: #557D95;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
+    font-size : 1.2vw;
+    font-weight: 500;
+    text-align: justify;
+
+}
+.rashomon_style_question_white{
+    padding: 1.2vw;
+    padding-top:1.1vw;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.2vw;
     font-weight: 500;
     text-align: justify;
 
 }
 
 .intersection_style{
-    padding-left: 1.3vw;
+    padding-left: 1.2vw;
     color: #557D95;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
+    font-size : 1.2vw;
     font-weight: 500;
     text-align: justify;
 
 }
 
 .rashomon_question{
-    padding: 1.3vw;
+    padding: 1.2vw;
     padding-bottom: 0vw;
     color: #557D95;
     font-family: 'Inter', sans-serif;
@@ -267,9 +293,9 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     box-sizing: border-box;
     color: white;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
+    font-size : 1.2vw;
     font-weight: 600;
-    padding-left: 1.3vw;
+    padding-left: 1.2vw;
     padding-top:1.2vw;
 
 }
@@ -278,15 +304,15 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     padding-left: 1.5vw;
     color: #e0e0e0;
     font-family: 'Inter', sans-serif;
-    font-size : 1.3vw;
+    font-size : 1.2vw;
     font-weight: 500;
     text-align: justify;
-    padding-right: 1.3vw;
+    padding-right: 1.2vw;
 
 }
 
 .add_bottom_padding{
-    margin-bottom: 1.3vw !important;
+    margin-bottom: 1.2vw !important;
 }
 
 
@@ -305,3 +331,22 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 .st-key-padding_cont_plot{
     padding: 1.2vw;
 }
+
+
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    gap: 1rem;
+
+    background: linear-gradient(
+        45deg,
+        hsl(204, 65%, 26%), 
+        hsl(204, 60%, 38%)
+    );
+
+    padding: 0.8rem 2.5rem;
+}
+

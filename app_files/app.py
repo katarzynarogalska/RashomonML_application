@@ -77,7 +77,7 @@ def global_nav():
     if st.sidebar.button("Home", use_container_width=True):
         change_page("home")
 
-    if st.sidebar.button("Datasets"):
+    if st.sidebar.button("Datasets", use_container_width=True):
         change_page("datasets")
 
     if st.sidebar.button("Rashomon page", use_container_width=True):

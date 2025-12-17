@@ -8,10 +8,10 @@
 
  /* smaller padding from left and right  */
 .block-container {
-    padding-left: 2.5rem !important;
-    padding-right: 2.5rem !important;
-    
-    max-width: 100% !important; 
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-top: 3rem !important;  /* mało, żeby top-nav przylegał */
+    /* max-width: 100% !important;  */
 }
 
 [data-testid="stVerticalBlock"] {
@@ -19,6 +19,7 @@
     padding-right: 0 !important;
    
 }
+
 
 
 
@@ -60,14 +61,17 @@ section[data-testid="stSidebar"] .stButton button {
 /* Linia separatora w sidebar */
 section[data-testid="stSidebar"] hr {
     border-color: darkgray !important;
-    margin: 0.5rem 0 !important;
+    margin: 2.5rem !important;
 }
-
+section[data-testid="stSidebar"] > div:first-child {
+    padding-top: 5rem;
+}
 
 .stSelectbox div[data-baseweb="select"] > div:first-child {
     background-color: white;
     color: gray !important;
     border-color: #426c85;
+    
 }
 
 
@@ -121,11 +125,17 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     hsl(204, 65%, 26%), 
     hsl(204, 60%, 38%)) !important;;
     border-radius: 0.6rem;
-    padding: 1.5vw;
+    padding: 1.5vw !important;
     padding-top: 0;
     margin-top: 1.6vw;
+   
+    width: calc(100% - 5rem) !important; /* 100% minus sumę marginesów */
+    margin-left: 2.5rem !important;
+    margin-right: 2.5rem !important;
+    box-sizing: border-box;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Home page text fonts ------------------------------------------------- */
 .homepage_title{
@@ -134,17 +144,22 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     font-size : 3.5vw;
     margin-bottom: 0rem;
     font-weight: 500;
+    margin-left: 2.5rem;
+    margin-top:1rem;
+    text-align: center;
     
 }
 .homepage_subtitle{
     color: #16476A;
     font-family: 'Inter', sans-serif;
-    font-size : 2vw;
+    font-size : 1.8vw;
     margin-top:0;
     margin-bottom: 0.6rem;
     font-weight: 500;
     border-bottom: 1.2px solid #426c85;
     border-radius: 0;
+    margin-left:2.5rem;
+    text-align: center;
 }
 .overview_descr{
     color:white ;
@@ -158,6 +173,8 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     font-size : 1.2vw;
     padding: 1.2vw;
     margin-top:0.3rem;
+    margin-left: 0.5rem !important;
+    margin-right: 2.5rem !important;
     text-align: justify;
 
 }
@@ -169,8 +186,52 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     margin-top:1rem;
     margin-bottom: 0.3rem;
     font-weight: 500;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
 }
 
+.section_title_overw{
+     color: #16476A;
+    font-family: 'Inter', sans-serif;
+    font-size : 2vw;
+    margin-top:1rem;
+    margin-bottom: 0rem;
+    background-color: white;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.2vw;
+    padding-bottom: 0;
+
+
+}
+.st-key-logo{
+    background-color: #f5f5f5;
+    margin-top:1rem;
+    margin-left:2.5rem;
+    padding:1.2vw;
+
+}
+
+.section_descr_overw{
+    color: #557D95;
+    background-color: white;
+     border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    font-family: 'Inter', sans-serif;
+    font-size : 1.2vw;
+    margin-top:0rem;
+    margin-bottom: 0.3rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 1.2vw;
+    font-weight: 500;
+    text-align: justify;
+
+}
 
 
 .section_descr{
@@ -181,6 +242,8 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     font-size : 1.2vw;
     margin-top:0.3rem;
     margin-bottom: 0.3rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 1.2vw;
     font-weight: 500;
@@ -189,10 +252,13 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 }
 
 .section_descr_metrics{
-    color: #f5f5f5;
+    color: #16476A;
+    background-color:#f5f5f5;
     font-family: 'Inter', sans-serif;
-    font-size : 1.2vw;
-    margin-top:0.3rem;
+    font-size : 1.25vw;
+    margin-top:0rem;
+    margin-left:2.5rem;
+    margin-right: 2.5rem;;
     margin-bottom: 0rem !important;
     padding: 1.2vw;
     font-weight: 500;
@@ -206,6 +272,8 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     hsl(204, 65%, 26%), 
     hsl(204, 60%, 38%)) !important;
     margin-top: 1.2vw;
+    margin-left:2.5rem;
+    margin-right:2.5rem;
     padding: 1.2vw;
     padding-top: 0vw;
     border-radius: 0.6rem;
@@ -227,11 +295,25 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 
 .section_title_rashomon_and_int{
     color: white;
+    background: linear-gradient(
+    45deg,
+    hsl(204, 65%, 26%), 
+    hsl(204, 60%, 38%)) !important;
     font-family: 'Inter', sans-serif;
     font-size : 2vw;
     margin-top:1rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0rem;
     font-weight: 500;
+    margin-left:2.5rem;
+    margin-right:2.5rem;
+    padding:1vw;
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+
+}
+
+.st-key-left-margin{
+    margin-left: 2.5rem;
 }
 
 
@@ -239,20 +321,22 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 
 
 .rashomon_style{
+    margin-left:2.5rem;
+    margin-right:2.5rem;
     padding-right: 1.2vw;
     color: #557D95;
     font-family: 'Inter', sans-serif;
-    font-size : 1.2vw;
+    font-size : 1.25vw;
     font-weight: 500;
     text-align: justify;
 
 }
 .rashomon_style_question{
     padding: 1.2vw;
-    padding-top:1.1vw;
+    padding-top:1vw;
     color: #557D95;
     font-family: 'Inter', sans-serif;
-    font-size : 1.2vw;
+    font-size : 1.25vw;
     font-weight: 500;
     text-align: justify;
 
@@ -308,6 +392,11 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
     font-weight: 500;
     text-align: justify;
     padding-right: 1.2vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    hyphens: auto;
+    max-width: 100%;
 
 }
 
@@ -317,12 +406,14 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 
 
 .dataset_title{
-    color: white;
-    border-bottom: solid 1px white;
+    color: #16476A;
+    border-bottom: solid 1.5px #16476A;
     font-family: 'Inter', sans-serif;
     font-size : 2vw;
     margin-top:1rem;
     margin-bottom: 0.3rem;
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
     font-weight: 500;
 
 }

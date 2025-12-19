@@ -23,50 +23,6 @@
 
 
 
-
-/* Styl sidebar */
-section[data-testid="stSidebar"] > div {
-    background: white !important;
-}
-[data-testid="stSidebar"] {
-    min-width: 20vw !important;
-    max-width: 20vw !important;
-}
-
-/* Make inner container match that width */
-[data-testid="stSidebar"] > div:first-child {
-    width: 20vw !important;
-}
-
-
-/* Przyciski w sidebar */
-section[data-testid="stSidebar"] .stButton button {
-    background: linear-gradient(
-    45deg,
-    hsl(204, 65%, 26%), 
-    hsl(204, 60%, 38%)) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 10px !important;
-    padding: 0.5rem 1rem !important;
-    font-weight: 500 !important;
-    transition: all 0.3s ease !important;
-    margin: 0.2rem 0 !important;
-    width: 90% !important;
-}
-
-
-
-
-/* Linia separatora w sidebar */
-section[data-testid="stSidebar"] hr {
-    border-color: darkgray !important;
-    margin: 2.5rem !important;
-}
-section[data-testid="stSidebar"] > div:first-child {
-    padding-top: 5rem;
-}
-
 .stSelectbox div[data-baseweb="select"] > div:first-child {
     background-color: white;
     color: gray !important;
@@ -74,16 +30,34 @@ section[data-testid="stSidebar"] > div:first-child {
     
 }
 
-
-
-/* ustawienia slider */
-section[data-testid="stSidebar"] .stSlider,
-section[data-testid="stSidebar"] .stSlider .rc-slider-mark-text {
-    color: gray !important;
+.st-key-params{
+    background-color: white;
+    padding-left:1.2vw;
+    padding-top:1.2vw;
+    padding-bottom:1.2vw;
+    border-top: 0.5px solid rgb(233, 231, 231);
+    border-bottom: 0.5px solid rgb(233, 231, 231);
 }
 
-section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
-    background-color: #ddd !important;
+.params_title{
+    margin-left: 1.2vw;
+    font-family: 'Inter', sans-serif;
+    color: #16476A;
+}
+
+.st-key-col1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.selected_params{
+    color:#c0c0c0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    margin-top:0.3rem;
+
 }
 
 .stSelectbox div[data-baseweb="select"] > div:first-child {
@@ -93,11 +67,13 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
              hsl(204, 50%, 55%)) !important;
             border-color: #2d408d;
             color:white !important;
-            font-size: 15;
-            margin : 0.2rem;
+            font-size: 10;
+            margin-bottom : 1vw;
             width: 90% !important;
         }
-
+.stSlider > div{
+    width: 50% !important;
+}
 
 /* Sidebar text fonts ------------------------------------------------- */
 
@@ -312,9 +288,11 @@ section[data-testid="stSidebar"] .stSlider .rc-slider-rail {
 
 }
 
-.st-key-left-margin{
+.st-key-left-margin, .st-key-left-margin_2{
     margin-left: 2.5rem;
 }
+
+
 
 
 

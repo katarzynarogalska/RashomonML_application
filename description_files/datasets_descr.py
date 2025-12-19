@@ -1,7 +1,7 @@
 
 HR_dataset_dict = {
         "Title" : "Job Change of Data Scientists Dataset", 
-        "Source": "https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists",
+        "Source": "<a href='https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists'>https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists </a>",
         "License": "CC0 Public Domain",
         "References" : "Author and Citations not specified",
         "Classification task": "binary classification",
@@ -35,7 +35,7 @@ HR_dataset_dict = {
 
 credit_dict = {
     "Title" : "Credit Score Dataset", 
-    "Source": "https://www.kaggle.com/datasets/sujithmandala/credit-score-classification-dataset",
+    "Source": '<a href="https://www.kaggle.com/datasets/sujithmandala/credit-score-classification-dataset"> https://www.kaggle.com/datasets/sujithmandala/credit-score-classification-dataset</a>',
     "License": "CC BY 4.0",
     "References" : "Author : Sujith K Mandala",
     "Classification task": "multiclass classification",
@@ -65,7 +65,7 @@ credit_dict = {
 
 breast_cancer_dict = {
     "Title" : "Breast Cancer Diagnosis Dataset", 
-    "Source": "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic",
+    "Source": '<a href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic </a>',
     "License": "CC BY-NC-SA 4.0",
     "References" : "Authors : William Wolberg, Olvi Mangasarian, Nick Street, W. Street. Citations - [K. P. Bennett, 'Decision Tree Construction Via Linear Programming.' Proceedings of the 4th Midwest Artificial Intelligence and Cognitive Science Society, pp. 97-101, 1992], [K. P. Bennett and O. L. Mangasarian: 'Robust Linear Programming Discrimination of Two Linearly Inseparable Sets', Optimization Methods and Software 1, 1992, 23-34]",
     "Classification task": "binary classification",
@@ -99,7 +99,7 @@ breast_cancer_dict = {
 
 heart_dict ={
     "Title" : "Heart Failure Dataset", 
-    "Source": "https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data",
+    "Source": '<a href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data"> https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data </a>',
     "License": "Open Data Commons Open Database License (ODbL) v1.0",
     "References" : " Citations - fedesoriano. (September 2021). Heart Failure Prediction Dataset. Retrieved [Date Retrieved] from https://www.kaggle.com/fedesoriano/heart-failure-prediction",
     "Classification task" : "binary classification",
@@ -134,7 +134,7 @@ heart_dict ={
 
 compas_dict ={
     "Title" : "COMPAS Recidivism Racial Bias Dataset", 
-    "Source": "https://www.kaggle.com/datasets/danofer/compass/data",
+    "Source": '<a href="https://www.kaggle.com/datasets/danofer/compass/data">https://www.kaggle.com/datasets/danofer/compass/data </a>',
     "License": "Database Contents License (DbCL) v1.0",
     "References" : "Authors - Propublica, Acknowledgements - Data & original analysis gathered by ProPublica.",
     "Classification task" : "binary classification",
@@ -165,7 +165,7 @@ compas_dict ={
 
 glass_dict ={
     "Title" : "Glass Classification Dataset", 
-    "Source": "https://www.kaggle.com/datasets/uciml/glass/data",
+    "Source": '<a href="https://www.kaggle.com/datasets/uciml/glass/data">https://www.kaggle.com/datasets/uciml/glass/data </a>',
     "License": "Database Contents License (DbCL) v1.0",
     "References" : "German, B. (1987). Glass Identification [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5WW2P",
     "Classification task" : "multiclass classification",
@@ -196,7 +196,7 @@ glass_dict ={
 
 letter_dict ={
     "Title" : "Letter Recognition Dataset", 
-    "Source": "https://archive.ics.uci.edu/dataset/59/letter+recognition",
+    "Source": '<a href="https://archive.ics.uci.edu/dataset/59/letter+recognition">https://archive.ics.uci.edu/dataset/59/letter+recognition </a>',
     "License": "CC by 4.0",
     "References" : "Author - David Slate",
     "Classification task" : "multiclass classification",
@@ -233,7 +233,7 @@ letter_dict ={
 
 yeast_dict ={
     "Title" : "Yeast Dataset", 
-    "Source": "https://archive.ics.uci.edu/dataset/110/yeast",
+    "Source": '<a href="https://archive.ics.uci.edu/dataset/110/yeast">https://archive.ics.uci.edu/dataset/110/yeast</a>',
     "License": "CC by 4.0",
     "References" : "Author - Kenta Nakai, Citations related to the dataset - 'Expert System for Predicting Protein Localization Sites in Gram-Negative Bacteria', Kenta Nakai & Minoru Kanehisa, PROTEINS: Structure, Function, and Genetics 11:95-110, 1991, 'A Knowledge Base for Predicting Protein Localization Sites in Eukaryotic Cells', Kenta Nakai & Minoru Kanehisa, Genomics 14:897-911, 1992.",
     "Classification task" : "multiclass classification",

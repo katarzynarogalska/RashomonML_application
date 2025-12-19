@@ -13,7 +13,7 @@ Detailed explanations of key concepts, such as the Rashomon Set, the Rashomon In
 """
 
 rashomon_set_definition ="""
-To understand the concept of the Rashomon Set, let's consider the situation illustrated by the diagram on the left. In many real-world cases, decision-makers train multiple models,evaluate their performance, and base their decisions on the predictions of the best-performing model.
+To understand the concept of the Rashomon Set, let's consider the situation illustrated by the diagram on the left. In many real-world cases, decision-makers train multiple models, evaluate their performance, and base their decisions on the predictions of the best-performing model.
 However, as the diagram shows, there are often many models with similarly strong performance. For example, Model 1 might achieve an accuracy of 0.99, while Model 2 is only 1% lower.
 <strong>The Rashomon Set</strong> consists of all models whose performance is within a small margin (epsilon) of the best model. 
 Among them, the model with the highest score is called the <strong>base model</strong>, and the others are referred to as <strong>competing models</strong>.
@@ -45,10 +45,10 @@ rashomon_metrics="""
 rashomon_intersection_definition ="""
 To further analyze the concept of the Rashomon Set, we introduce an additional apporach - the Rashomon Intersection.
 It is based on the idea that one may want to maximize not just one, but two evaluation metrics.
-Let's consider the situation illustrated by the diagram on the right. 
-While we can analyze two separate Rashomon Sets (for accuracy and recall), we may also be interested in which of our models achieved similarly high scores in metrics. 
+Let's consider the situation illustrated by the diagram on the left. 
+While we can analyze two separate Rashomon Sets (for accuracy and recall), we may also be interested in which of our models achieved similarly high scores in both metrics. 
 According to the chart, Models 3 and 4 present good scores in both metrics, so they are included in the Rashomon Intersection. 
-On the other hand, Models 1, 2, and 5 did not achieve high scores in both metrics, only in one, so they are not part of the Intersection.
+On the other hand, Models 1, 2, and 5 are included in the Intersection, as they did not perform similarly well regarding both metrics.
 """
 
 bibliography ="""

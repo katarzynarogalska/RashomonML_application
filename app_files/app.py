@@ -171,7 +171,7 @@ if page == "home":
     with col1:  
             with st.container(key="logo"):
                     img=Image.open(root_path/"app_files"/"pics"/"logo.jpg")
-                    st.image(img,use_container_width=True)
+                    st.image(img,width='stretch')
     with col2:
         
         st.markdown('<div class="section_title_overw"> 🖳 Application overview </div>', unsafe_allow_html=True)
@@ -187,7 +187,7 @@ if page == "home":
     with col1:
         with st.container(key="left-margin"):
             img = Image.open(root_path/"app_files"/"pics"/"rashomon.jpg")
-            st.image(img,use_container_width=True)
+            st.image(img,width='stretch')
         
         
     st.markdown("""
@@ -288,7 +288,7 @@ if page == "home":
     with col1:
         with st.container(key="left-margin_2"):
             img = Image.open(root_path/"app_files"/"pics"/"intersection.jpg")
-            st.image(img,use_container_width=True)
+            st.image(img,width='stretch')
 
     st.markdown('<div class="section_title_rashomon_and_int "> &nbsp; 🖩 The Rashomon Intersection metrics </div>', unsafe_allow_html=True)
     st.markdown('<div class="section_descr_metrics">As the Rashomon Intersection is defined as the intersection of two Rashomon Sets, all metrics from the Rashomon Set also apply. In addition, we compare the Rashomon Intersection with traditional methods for analyzing the multi-objective optimization problems, such as the Pareto Front.  </div>', unsafe_allow_html=True)

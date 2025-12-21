@@ -92,8 +92,8 @@ def show():
         if all_params_set:
             leaderboard_autogluon, y_true_autogluon, predictions_dict_autogluon, proba_predictions_dict_autogluon, feature_importance_dict_autogluon = load_converted_data(selected_dataset, "autogluon")
             leaderboard_h2o, y_true_h2o, predictions_dict_h2o, proba_predictions_dict_h2o, feature_importance_dict_h2o = load_converted_data(selected_dataset, "h2o")
-            rs_autogluon = RashomonSet(leaderboard = leaderboard_autogluon, predictions =predictions_dict_autogluon, proba_predictions = proba_predictions_dict_autogluon, feature_importances = feature_importance_dict_autogluon, base_metric = selected_metric, epsilon = epsilon)
-            st.markdown("""
+            spinner_placeholder = st.empty()
+            spinner_placeholder.markdown("""
             <div style="
                 display: flex;
                 justify-content: center;
@@ -118,7 +118,7 @@ def show():
             </style>
             """, unsafe_allow_html=True)
 
-
+            rs_autogluon = RashomonSet(leaderboard = leaderboard_autogluon, predictions =predictions_dict_autogluon, proba_predictions = proba_predictions_dict_autogluon, feature_importances = feature_importance_dict_autogluon, base_metric = selected_metric, epsilon = epsilon)
             rs_h2o = RashomonSet(leaderboard = leaderboard_h2o, predictions =predictions_dict_h2o, proba_predictions = proba_predictions_dict_h2o, feature_importances = feature_importance_dict_h2o, base_metric = selected_metric, epsilon = epsilon) 
             visualizer_autogluon = Visualizer(rs_autogluon, y_true_autogluon)
             visualizer_h2o = Visualizer(rs_h2o, y_true_h2o)
@@ -128,7 +128,7 @@ def show():
 
             if rs_autogluon.task_type == "binary":
                 #autoglon plots
-                task_type = "binary"
+                st.session_state.task_type = "binary"
                 method_names = visualizer_autogluon.binary_methods
                 ambiguity_discrepancy_proba_plot, ambiguity_discrepancy_proba_descr = visualizer_autogluon.lolipop_ambiguity_discrepancy_proba_version(delta = 0.1)
                 plots_autogluon["lolipop_ambiguity_discrepancy_proba_version"], descriptions_autogluon["lolipop_ambiguity_discrepancy_proba_version"] = ambiguity_discrepancy_proba_plot, ambiguity_discrepancy_proba_descr
@@ -147,7 +147,7 @@ def show():
 
             elif rs_autogluon.task_type =="multiclass":
                 #autogluon plots
-                task_type = "multiclass"
+                st.session_state.task_type = "multiclass"
                 method_names = visualizer_autogluon.multiclass_methods
             random_idx_autogluon = random.choice(y_true_autogluon.index.tolist()) #choose random sample for analysis
             random_idx_h2o = random.choice(y_true_h2o.index.tolist()) #choose random sample for analysis
@@ -179,20 +179,28 @@ def show():
                     else: plot, descr = func()
                     plots_h2o[method] = plot
                     descriptions_h2o[method] = descr
+            spinner_placeholder.empty()
+        else:
+            st.session_state.task_type = None
+            
+            if selected_dataset == "--choose--":
+                st.warning("Please select a dataset for analysis.")
+                
+            elif selected_metric=="--choose--":
+                st.warning("Please choose evaluation metric.")
 
         with autogluon_tab:
             if all_params_set:
-                if task_type == "binary":
+                if st.session_state.task_type == "binary":
                     render_binary_dashboard(plots_autogluon, descriptions_autogluon, prefix="autogluon")
-                elif task_type == "multiclass":
-                    render_multiclass_dashboard(plots_autogluon, descriptions_autogluon, prefix="autogluon")
-                                
+                elif st.session_state.task_type == "multiclass":
+                    render_multiclass_dashboard(plots_autogluon, descriptions_autogluon, prefix="autogluon")      
 
         with h2o_tab:
             if all_params_set:
-                if task_type == "binary":
+                if st.session_state.task_type == "binary":
                     render_binary_dashboard(plots_h2o, descriptions_h2o, prefix="h2o")
-                elif task_type == "multiclass":
+                elif st.session_state.task_type == "multiclass":
                     render_multiclass_dashboard(plots_h2o, descriptions_h2o, prefix="h2o")
   
     

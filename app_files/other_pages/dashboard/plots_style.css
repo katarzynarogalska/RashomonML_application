@@ -19,7 +19,21 @@
 .st-key-h2o_proba-probabilities,
 .st-key-h2o_capacity-per-sample,
 .st-key-h2o_pareto,
-.st-key-h2o_gauge {
+.st-key-h2o_gauge,
+.st-key-intersection_autogluon_table_container,
+.st-key-intersection_autogluon_basics,
+.st-key-intersection_autogluon_ratio_white_container,
+.st-key-intersection_autogluon_proba-probabilities,
+.st-key-intersection_autogluon_capacity-per-sample,
+.st-key-intersection_autogluon_pareto,
+.st-key-intersection_autogluon_gauge,
+.st-key-intersection_h2o_table_container,
+.st-key-intersection_h2o_basics,
+.st-key-intersection_h2o_ratio_white_container,
+.st-key-intersection_h2o_proba-probabilities,
+.st-key-intersection_h2o_capacity-per-sample,
+.st-key-intersection_h2o_pareto,
+.st-key-intersection_h2o_gauge {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
@@ -56,7 +70,35 @@
 .st-key-h2o_vprs_by_class,
 .st-key-h2o_vprs_hist,
 .st-key-h2o_vprs_vs_base_model,
-.st-key-h2o_cohens_kappa_barplot {
+.st-key-h2o_cohens_kappa_barplot,
+.st-key-intersection_autogluon_ratio_epsilon_white_container,
+.st-key-intersection_autogluon_pattern_white_container,
+.st-key-intersection_autogluon_pattern_epsilon_white_container,
+.st-key-intersection_autogluon_ambig_epsilon_container,
+.st-key-intersection_autogluon_discr_epsilon_container,
+.st-key-intersection_autogluon_lolipop_container,
+.st-key-intersection_autogluon_capacity-hist,
+.st-key-intersection_autogluon_capacity-boxplot,
+.st-key-intersection_autogluon_percent_agreement,
+.st-key-intersection_autogluon_agreement_rates_violin,
+.st-key-intersection_autogluon_vprs_by_class,
+.st-key-intersection_autogluon_vprs_hist,
+.st-key-intersection_autogluon_vprs_vs_base_model,
+.st-key-intersection_autogluon_cohens_kappa_barplot,
+.st-key-intersection_h2o_ratio_epsilon_white_container,
+.st-key-intersection_h2o_pattern_white_container,
+.st-key-intersection_h2o_pattern_epsilon_white_container,
+.st-key-intersection_h2o_ambig_epsilon_container,
+.st-key-intersection_h2o_discr_epsilon_container,
+.st-key-intersection_h2o_lolipop_container,
+.st-key-intersection_h2o_capacity-hist,
+.st-key-intersection_h2o_capacity-boxplot,
+.st-key-intersection_h2o_percent_agreement,
+.st-key-intersection_h2o_agreement_rates_violin,
+.st-key-intersection_h2o_vprs_by_class,
+.st-key-intersection_h2o_vprs_hist,
+.st-key-intersection_h2o_vprs_vs_base_model,
+.st-key-intersection_h2o_cohens_kappa_barplot{
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
@@ -65,7 +107,7 @@
     padding-bottom: 25px;
 }
 
-.st-key-autogluon_venn, .st-key-h2o_venn {
+.st-key-intersection_autogluon_venn, .st-key-intersection_h2o_venn {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
@@ -77,7 +119,10 @@
 
 /*  WHITE CONTAINERS for all elments : Other classes ----------------------------------------------------------------- */
 
-.st-key-autogluon_per_sample, .st-key-h2o_per_sample{
+.st-key-autogluon_per_sample, 
+.st-key-h2o_per_sample, 
+.st-key-intersection_autogluon_per_sample, 
+.st-key-intersection_h2o_per_sample{
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
@@ -88,7 +133,10 @@
 
 }
 
-.st-key-autogluon_fi_table, .st-key-h2o_fi_table{
+.st-key-autogluon_fi_table, 
+.st-key-h2o_fi_table, 
+.st-key-intersection_autogluon_fi_table, 
+.st-key-intersection_h2o_fi_table{
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
@@ -98,7 +146,10 @@
     margin-top: 0px;
 }
 
-.st-key-autogluon_fi_heatmap, .st-key-h2o_fi_heatmap{
+.st-key-autogluon_fi_heatmap, 
+.st-key-h2o_fi_heatmap, 
+.st-key-intersection_autogluon_fi_heatmap, 
+.st-key-intersection_h2o_fi_heatmap{
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 6px 10px rgba(0,0,0,0.1);
@@ -108,7 +159,10 @@
     height: 700px
 }
 
-.st-key-autogluon_capacity_per_sample_padding, .st-key-h2o_capacity_per_sample_padding{
+.st-key-autogluon_capacity_per_sample_padding, 
+.st-key-h2o_capacity_per_sample_padding, 
+.st-key-intersection_autogluon_capacity_per_sample_padding, 
+.st-key-intersection_h2o_capacity_per_sample_padding{
     margin-top:15px;
 }
 

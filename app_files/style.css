@@ -63,9 +63,9 @@
 .stSelectbox div[data-baseweb="select"] > div:first-child {
             background: linear-gradient(
             45deg,
-             hsl(204, 45%, 50%),
-             hsl(204, 50%, 55%)) !important;
-            border-color: #2d408d;
+             hsl(205, 70%, 20%),
+             hsl(204, 66%, 30%)) !important;
+            border-color: #16476A;
             color:white !important;
             font-size: 10;
             margin-bottom : 1vw;
@@ -432,14 +432,20 @@
     height: 50px;
     white-space: pre-wrap;
     background-color: #f0f2f6;
+    color: black;
     font-weight: 900;
     flex: 1;
     margin: 0;
     border-radius: 0; 
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stTabs [aria-selected="true"] {
-    background-color: #eef1f4;
+    background-color: #16476A;
+    color: white;
     font-weight: 900;
 }
 
@@ -449,4 +455,3 @@
     justify-content: center;
     font-weight: 900;
 }
-

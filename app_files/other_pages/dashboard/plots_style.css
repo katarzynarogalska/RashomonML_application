@@ -1,0 +1,217 @@
+.st-key-align{
+    display: flex !important;
+    align-items: stretch !important;
+    gap: 20px;
+}
+
+/*  WHITE CONTAINERS for all elments ----------------------------------------------------------------- */
+
+.st-key-autogluon_table_container,
+.st-key-autogluon_basics,
+.st-key-autogluon_ratio_white_container,
+.st-key-autogluon_proba-probabilities,
+.st-key-autogluon_capacity-per-sample,
+.st-key-autogluon_pareto,
+.st-key-autogluon_gauge,
+.st-key-h2o_table_container,
+.st-key-h2o_basics,
+.st-key-h2o_ratio_white_container,
+.st-key-h2o_proba-probabilities,
+.st-key-h2o_capacity-per-sample,
+.st-key-h2o_pareto,
+.st-key-h2o_gauge {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    padding: 8px 8px;
+    border: 1px solid #e6e6e6;
+}
+
+/*  WHITE CONTAINERS for all elments : More padding ----------------------------------------------------------------- */
+
+.st-key-autogluon_ratio_epsilon_white_container,
+.st-key-autogluon_pattern_white_container,
+.st-key-autogluon_pattern_epsilon_white_container,
+.st-key-autogluon_ambig_epsilon_container,
+.st-key-autogluon_discr_epsilon_container,
+.st-key-autogluon_lolipop_container,
+.st-key-autogluon_capacity-hist,
+.st-key-autogluon_capacity-boxplot,
+.st-key-autogluon_percent_agreement,
+.st-key-autogluon_agreement_rates_violin,
+.st-key-autogluon_vprs_by_class,
+.st-key-autogluon_vprs_hist,
+.st-key-autogluon_vprs_vs_base_model,
+.st-key-autogluon_cohens_kappa_barplot,
+.st-key-h2o_ratio_epsilon_white_container,
+.st-key-h2o_pattern_white_container,
+.st-key-h2o_pattern_epsilon_white_container,
+.st-key-h2o_ambig_epsilon_container,
+.st-key-h2o_discr_epsilon_container,
+.st-key-h2o_lolipop_container,
+.st-key-h2o_capacity-hist,
+.st-key-h2o_capacity-boxplot,
+.st-key-h2o_percent_agreement,
+.st-key-h2o_agreement_rates_violin,
+.st-key-h2o_vprs_by_class,
+.st-key-h2o_vprs_hist,
+.st-key-h2o_vprs_vs_base_model,
+.st-key-h2o_cohens_kappa_barplot {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    padding: 8px 8px;
+    border: 1px solid #e6e6e6;
+    padding-bottom: 25px;
+}
+
+.st-key-autogluon_venn, .st-key-h2o_venn {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    border: 1px solid #e6e6e6;
+    padding-bottom: 152px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+/*  WHITE CONTAINERS for all elments : Other classes ----------------------------------------------------------------- */
+
+.st-key-autogluon_per_sample, .st-key-h2o_per_sample{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    padding: 8px 8px;
+    border: 1px solid #e6e6e6;
+    padding-bottom:22px;
+  
+
+}
+
+.st-key-autogluon_fi_table, .st-key-h2o_fi_table{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    padding: 8px 8px;
+    border: 1px solid #e6e6e6;
+    padding-bottom:28px;
+    margin-top: 0px;
+}
+
+.st-key-autogluon_fi_heatmap, .st-key-h2o_fi_heatmap{
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    padding: 8px 8px;
+    border: 1px solid #e6e6e6;
+    padding-bottom:50px;
+    height: 700px
+}
+
+.st-key-autogluon_capacity_per_sample_padding, .st-key-h2o_capacity_per_sample_padding{
+    margin-top:15px;
+}
+
+
+/* -------SECTIONS TITLES STYLE----------------------------------------------------- */
+
+.section_title{
+    color: #426c85;
+    font-family: 'Inter', sans-serif; 
+    font-size: 21px; 
+    font-weight: 500; 
+    letter-spacing: 0.5px; 
+    margin-bottom:10px;
+   
+}
+
+/* -------SECTIONS DESCRIPTIONS STYLE----------------------------------------------------- */
+
+.section_description{
+    color: #6B7F8A;
+    font-family: 'Inter', sans-serif; 
+    font-size: 15px; 
+    font-weight: 300 !important;
+    letter-spacing: 0.1px;
+    line-height: 1.6; 
+    margin-bottom:15px;
+   
+}
+.venn_description{
+    color: #6B7F8A;
+    font-family: 'Inter', sans-serif; 
+    font-size: 15px; 
+    font-weight: 300 !important;
+    letter-spacing: 0.1px;
+    line-height: 1.6; 
+    margin-bottom:30px;
+    padding: 8px 8px;
+   
+}
+
+.less_padding{
+    margin-bottom: 10px;
+}
+
+.no_padding{
+    margin-bottom: 0px;
+    padding: 0px 0px;
+}
+
+.additional_padding{
+    margin-bottom: 35px;
+}
+
+.heatmap-descr{
+    padding: 10px 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+/* ------- PLOTS DESCRIPTIONS STYLE----------------------------------------------------- */
+
+.plots_descr{
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-weight: 300;
+    line-height: 1.2;
+    font-size: 15px;
+    color: #989898;
+}
+
+.rashomon-table-descr {
+    padding: 8px 10px;
+    margin-bottom: 15px;
+    margin-top: 0px;
+}
+
+/* ------- RADIO BUTTON STYLE ----------------------------------------------------- */
+
+
+div[role="radiogroup"] {
+    gap: 10px;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+div[role="radiogroup"] > label {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    background: transparent !important;
+}
+div[role="radiogroup"] > label[data-testid="stRadio"] {
+    margin: 0 !important;
+}
+
+div[role="radiogroup"] p { 
+    color: #8B9DA8; 
+    font-family: 'Inter', sans-serif; 
+    font-size: 16px; 
+    font-weight: 300 !important; 
+    letter-spacing: 0.1px;
+    line-height: 1.5; 
+    margin-bottom: 0px !important;
+}
+
+div[role="radiogroup"] input[type="radio"] {
+    display: none;
+}

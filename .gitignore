@@ -1,2 +1,7 @@
 /.vscode
 .DS_Store
+/arsa-env
+__pycache__/
+*.pyc
+venv/
+.env

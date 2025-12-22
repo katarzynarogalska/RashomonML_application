@@ -22,17 +22,21 @@ def plot_class_distribution(data, target_column):
         plot_bgcolor='rgba(0,0,0,0)',   
         paper_bgcolor='rgba(0,0,0,0)',
         yaxis=dict(
-            title="Count",
-            tickfont=dict(color='white'),          
-            titlefont=dict(color='white'),        
+           title=dict(
+                text="Count",
+                font=dict(color='white')
+            ),
+            tickfont=dict(color='white'),
             gridcolor='lightgray',
         ),
         xaxis=dict(
-            title="Class",
-            tickfont=dict(color='white'),          
-            titlefont=dict(color='white'),        
+            title=dict(
+                text="Class",
+                font=dict(color='white')
+            ),
+            tickfont=dict(color='white'),
             gridcolor='lightgray',
-            type='category'             
+            type='category'          
         ),
         margin=dict(l=60, r=10, t=80, b=60)
     )
@@ -53,7 +57,6 @@ def plot_correlation_matrix(data):
             title='corr',
             thickness=15,   
             tickfont=dict(color='white'),
-            titlefont=dict(color='white')
         )
     ))
     fig.update_layout(
@@ -68,13 +71,13 @@ def plot_correlation_matrix(data):
         ),
         xaxis=dict(
             tickfont=dict(color='white'),
-            titlefont=dict(color='white'),
+            title=dict(font=dict(color='white')),
             gridcolor='lightgray',
             side='bottom'
         ),
         yaxis=dict(
             tickfont=dict(color='white'),
-            titlefont=dict(color='white'),
+            title=dict(font=dict(color='white')),
             gridcolor='lightgray'
         ),
         plot_bgcolor='rgba(0,0,0,0)',
@@ -93,31 +96,5 @@ def return_missing(dataset):
 
 
 
-# #analysis if data might be skewed
-# def plot_features_distribution(data, target):
-#     features = data.drop(columns=[target])
-#     features.hist(bins=20, figsize=(15, 15), color = 'skyblue')
-#     plt.suptitle("Feature Distributions")
-#     plt.show()
 
-# #plot categorical features distribution with respect to target
-# def plot_categorical_features_distribution(data, target):
-#     categorical_data = data.select_dtypes(include='object')
-#     n_cols = 3
-#     n_rows = (len(categorical_data.columns) + n_cols - 1) // n_cols
-
-#     fig, axes = plt.subplots(n_rows, n_cols, figsize=(5*n_cols, 4*n_rows))
-#     axes = axes.flatten()
-
-#     for i, column in enumerate(categorical_data.columns):
-#         sns.countplot(x=column, data=data, hue=target, ax=axes[i])
-#         axes[i].set_title(f"Distribution of {column} by {target}")
-#         axes[i].set_xlabel(column)
-#         axes[i].set_ylabel("Count")
-
-#     for j in range(i+1, len(axes)):
-#         axes[j].set_visible(False)
-
-#     plt.tight_layout()
-#     plt.show()
 

@@ -1,7 +1,7 @@
 
 HR_dataset_dict = {
         "Title" : "Job Change of Data Scientists Dataset", 
-        "Source": "<a href='https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists'>https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists </a>",
+        "Source": "<a href='https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists'  style='color: white !important;'>https://www.kaggle.com/datasets/arashnic/hr-analytics-job-change-of-data-scientists </a>",
         "License": "CC0 Public Domain",
         "References" : "Author and Citations not specified",
         "Classification task": "binary classification",
@@ -35,7 +35,7 @@ HR_dataset_dict = {
 
 credit_dict = {
     "Title" : "Credit Score Dataset", 
-    "Source": '<a href="https://www.kaggle.com/datasets/sujithmandala/credit-score-classification-dataset"> https://www.kaggle.com/datasets/sujithmandala/credit-score-classification-dataset</a>',
+    "Source": '<a href="https://www.kaggle.com/datasets/sujithmandala/credit-score-classification-dataset"  style="color: white !important;"> https://www.kaggle.com/datasets/sujithmandala/credit-score-classification-dataset</a>',
     "License": "CC BY 4.0",
     "References" : "Author : Sujith K Mandala",
     "Classification task": "multiclass classification",
@@ -65,7 +65,7 @@ credit_dict = {
 
 breast_cancer_dict = {
     "Title" : "Breast Cancer Diagnosis Dataset", 
-    "Source": '<a href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic">https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic </a>',
+    "Source": '<a href="https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic"  style="color: white !important;">https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic </a>',
     "License": "CC BY-NC-SA 4.0",
     "References" : "Authors : William Wolberg, Olvi Mangasarian, Nick Street, W. Street. Citations - [K. P. Bennett, 'Decision Tree Construction Via Linear Programming.' Proceedings of the 4th Midwest Artificial Intelligence and Cognitive Science Society, pp. 97-101, 1992], [K. P. Bennett and O. L. Mangasarian: 'Robust Linear Programming Discrimination of Two Linearly Inseparable Sets', Optimization Methods and Software 1, 1992, 23-34]",
     "Classification task": "binary classification",
@@ -99,7 +99,7 @@ breast_cancer_dict = {
 
 heart_dict ={
     "Title" : "Heart Failure Dataset", 
-    "Source": '<a href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data"> https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data </a>',
+    "Source": '<a href="https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data"  style="color: white !important;"> https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction/data </a>',
     "License": "Open Data Commons Open Database License (ODbL) v1.0",
     "References" : " Citations - fedesoriano. (September 2021). Heart Failure Prediction Dataset. Retrieved [Date Retrieved] from https://www.kaggle.com/fedesoriano/heart-failure-prediction",
     "Classification task" : "binary classification",
@@ -134,7 +134,7 @@ heart_dict ={
 
 compas_dict ={
     "Title" : "COMPAS Recidivism Racial Bias Dataset", 
-    "Source": '<a href="https://www.kaggle.com/datasets/danofer/compass/data">https://www.kaggle.com/datasets/danofer/compass/data </a>',
+    "Source": '<a href="https://www.kaggle.com/datasets/danofer/compass/data"  style="color: white !important;">https://www.kaggle.com/datasets/danofer/compass/data </a>',
     "License": "Database Contents License (DbCL) v1.0",
     "References" : "Authors - Propublica, Acknowledgements - Data & original analysis gathered by ProPublica.",
     "Classification task" : "binary classification",
@@ -146,16 +146,16 @@ compas_dict ={
     "Number of records" : 6172,
     "Number of features" : 11,
     "Feature description" : [
-        "Number_of_Priors - number of prior offences defendant has committed",
-        "Age_Above_FourtyFive - indicator if the defendant is above 45 years old",
-        "Age_Below_TwentyFive -  indicator if defendant is below 25 years old",
-        "African_American -  indicator if the defendant's race is above African American",
-        "Asian - indicator if defendant’s race is above Asian",
-        "Hispanic - indicator if defendant’s race is above Hispanic",
-        "Native_American - indicator if defendant’s race is above Native American",
-        "Other - indicator if defendant’s race is other than listed above",
-        "Female - indicator if the defendant is a female",
-        "Misdemeanor - indicator whether defendant has committed misdemeanor offense"
+        "Number_of_Priors : number of prior offences defendant has committed",
+        "Age_Above_FourtyFive : indicator if the defendant is above 45 years old",
+        "Age_Below_TwentyFive :  indicator if defendant is below 25 years old",
+        "African_American :  indicator if the defendant's race is above African American",
+        "Asian : indicator if defendant’s race is above Asian",
+        "Hispanic : indicator if defendant’s race is above Hispanic",
+        "Native_American : indicator if defendant’s race is above Native American",
+        "Other : indicator if defendant’s race is other than listed above",
+        "Female : indicator if the defendant is a female",
+        "Misdemeanor : indicator whether defendant has committed misdemeanor offense"
     ],
     "Note" : "Data from this dataset was saved from Kaggle in a form of one dataset, therefore it was splitted to train and test set during the preprocessing process. You can find this dataset at the source above, file used propublicaCompassRecividism_data_fairml.csv. The dataset contains fewer features, and all variables have been converted to numeric format to prevent data leakage (which occurs in other datasets). We dropped the Score_factor column since it is the output of the COMPAS algorithm which is biased in favor of white defendants.",
     "Characteristics": "This data is the representation or a real life situation when predictive multiplicity should be carefully examined before the decision-making process, as it may have harmful consequences. One model can predict that a defendant will commit a crime in the next two-year period, while another predicts that they will not. It is crucial for the model to not be biased in favor of any race so relying on model scores itself might be unfair to individuals. This dataset has well balanced classes and does not show signs of highly correlated features that would pose an additional challenge for ML algorithms.",
@@ -165,7 +165,7 @@ compas_dict ={
 
 glass_dict ={
     "Title" : "Glass Classification Dataset", 
-    "Source": '<a href="https://www.kaggle.com/datasets/uciml/glass/data">https://www.kaggle.com/datasets/uciml/glass/data </a>',
+    "Source": '<a href="https://www.kaggle.com/datasets/uciml/glass/data"  style="color: white !important;">https://www.kaggle.com/datasets/uciml/glass/data </a>',
     "License": "Database Contents License (DbCL) v1.0",
     "References" : "German, B. (1987). Glass Identification [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5WW2P",
     "Classification task" : "multiclass classification",
@@ -196,7 +196,7 @@ glass_dict ={
 
 letter_dict ={
     "Title" : "Letter Recognition Dataset", 
-    "Source": '<a href="https://archive.ics.uci.edu/dataset/59/letter+recognition">https://archive.ics.uci.edu/dataset/59/letter+recognition </a>',
+    "Source": '<a href="https://archive.ics.uci.edu/dataset/59/letter+recognition"  style="color: white !important;">https://archive.ics.uci.edu/dataset/59/letter+recognition </a>',
     "License": "CC by 4.0",
     "References" : "Author - David Slate",
     "Classification task" : "multiclass classification",
@@ -233,7 +233,7 @@ letter_dict ={
 
 yeast_dict ={
     "Title" : "Yeast Dataset", 
-    "Source": '<a href="https://archive.ics.uci.edu/dataset/110/yeast">https://archive.ics.uci.edu/dataset/110/yeast</a>',
+    "Source": '<a href="https://archive.ics.uci.edu/dataset/110/yeast" style="color: white !important;">https://archive.ics.uci.edu/dataset/110/yeast</a>',
     "License": "CC by 4.0",
     "References" : "Author - Kenta Nakai, Citations related to the dataset - 'Expert System for Predicting Protein Localization Sites in Gram-Negative Bacteria', Kenta Nakai & Minoru Kanehisa, PROTEINS: Structure, Function, and Genetics 11:95-110, 1991, 'A Knowledge Base for Predicting Protein Localization Sites in Eukaryotic Cells', Kenta Nakai & Minoru Kanehisa, Genomics 14:897-911, 1992.",
     "Classification task" : "multiclass classification",

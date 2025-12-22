@@ -192,43 +192,44 @@ if page == "home":
         
     st.markdown("""
         <style>
-           /* 1. Zewnętrzny kontener – marginesy */
-[data-testid="stExpander"] {
-    margin-top: 1rem !important;
-    margin-left: 2.5rem !important;
-    margin-right: 2.5rem !important;
-   
-                
-}
+        /* 1. Zewnętrzny kontener – marginesy */
+        [data-testid="stExpander"] {
+            margin-top: 0rem !important;
+            margin-left: 2.5rem !important;
+            margin-right: 2.5rem !important;
+            max-width: calc(100% - 5rem) !important;  /* uwzględnia marginesy */
+        }
 
-/* 2. Wnętrze ekspandera – tło, border i padding */
-[data-testid="stExpander"] > details {
-    border: 1px solid #16476A !important;
-    border-radius: 0.6rem !important;
-    padding: 1rem !important;             /* wypełnienie */
-    background-color: #16476A !important;
-               
-}
+        /* 2. Wnętrze ekspandera – tło, border i padding */
+        [data-testid="stExpander"] > details {
+            border: 1px solid #16476A !important;
+            border-radius: 0.6rem !important;
+            padding: 1rem !important;             
+            background-color: #16476A !important;      
+        }
 
-/* 3. Label ekspandera */
-[data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {
-    color: white!important;
-    font-size: 1.3vw !important;
-    font-weight: 500 !important;
-    font-family: 'Inter', sans-serif !important;
-    padding:0.01vw;
-}
+        /* 3. Label ekspandera – tylko główny tekst, ignoruje kbd i inne dzieci */
+        [data-testid="stExpander"] summary >span  {
+            color: white !important;
+            font-size: 1.3vw !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+            padding: 0 !important;
+        }
+        [data-testid="stExpander"] summary kbd {
+            display: none !important;
+        }
 
-/* 4. Ikona ekspandera */
-[data-testid="stExpander"] summary svg {
-    width: 28px !important;
-    height: 28px !important;
-    color: white !important;
-    fill: white !important;
-}
-
-    </style>
-    """, unsafe_allow_html=True)
+        /* 4. Ikona ekspandera */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: white !important;
+            fill: white !important;
+            vertical-align: middle;
+        }
+        </style>
+        """, unsafe_allow_html=True)
     with st.expander(label="Why is that so important?", expanded=False):
         st.markdown(f'<div class ="rashomon_style_question_white"> {front_page_descriptions.rashomon_set_situation} </div>', unsafe_allow_html=True)
 
@@ -237,44 +238,45 @@ if page == "home":
 
     st.markdown("""
         <style>
-           /* 1. Zewnętrzny kontener – marginesy */
-[data-testid="stExpander"] {
-    margin-top: 0rem !important;
-    margin-left: 2.5rem !important;
-    margin-right: 2.5rem !important;
-   
-                
-}
+        /* 1. Zewnętrzny kontener – marginesy */
+        [data-testid="stExpander"] {
+            margin-top: 0rem !important;
+            margin-left: 2.5rem !important;
+            margin-right: 2.5rem !important;
+            max-width: calc(100% - 5rem) !important;  /* uwzględnia marginesy */
+        }
 
-/* 2. Wnętrze ekspandera – tło, border i padding */
-[data-testid="stExpander"] > details {
-    border: 1px solid #16476A !important;
-    border-radius: 0.6rem !important;
-    padding: 1rem !important;             /* wypełnienie */
-    background-color: #16476A !important;
-               
-}
+        /* 2. Wnętrze ekspandera – tło, border i padding */
+        [data-testid="stExpander"] > details {
+            border: 1px solid #16476A !important;
+            border-radius: 0.6rem !important;
+            padding: 1rem !important;             
+            background-color: #16476A !important;      
+        }
 
-/* 3. Label ekspandera */
-[data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {
-    color: white!important;
-    font-size: 1.3vw !important;
-    font-weight: 500 !important;
-    font-family: 'Inter', sans-serif !important;
-    padding:0.01vw;
-}
+        /* 3. Label ekspandera – tylko główny tekst, ignoruje kbd i inne dzieci */
+        [data-testid="stExpander"] summary >span  {
+            color: white !important;
+            font-size: 1.3vw !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+            padding: 0 !important;
+        }
+        [data-testid="stExpander"] summary kbd {
+            display: none !important;
+        }
 
-/* 4. Ikona ekspandera */
-[data-testid="stExpander"] summary svg {
-    width: 28px !important;
-    height: 28px !important;
-    color: white !important;
-    fill: white !important;
-}
-
-    </style>
-    """, unsafe_allow_html=True)
-    with st.expander(label="Expand for details →", expanded=False):
+        /* 4. Ikona ekspandera */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: white !important;
+            fill: white !important;
+            vertical-align: middle;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    with st.expander(label="Expand for details", expanded=False):
         st.markdown(f'<div class="section_descr"> {front_page_descriptions.rashomon_metrics} </div>', unsafe_allow_html=True)
 
     st.markdown("---")
@@ -299,44 +301,45 @@ if page == "home":
 
     st.markdown("""
         <style>
-           /* 1. Zewnętrzny kontener – marginesy */
-[data-testid="stExpander"] {
-    margin-top: 0rem !important;
-    margin-left: 2.5rem !important;
-    margin-right: 2.5rem !important;
-   
-                
-}
+        /* 1. Zewnętrzny kontener – marginesy */
+        [data-testid="stExpander"] {
+            margin-top: 0rem !important;
+            margin-left: 2.5rem !important;
+            margin-right: 2.5rem !important;
+            max-width: calc(100% - 5rem) !important;  /* uwzględnia marginesy */
+        }
 
-/* 2. Wnętrze ekspandera – tło, border i padding */
-[data-testid="stExpander"] > details {
-    border: 1px solid #16476A !important;
-    border-radius: 0.6rem !important;
-    padding: 1rem !important;             /* wypełnienie */
-    background-color: #16476A !important;
-               
-}
+        /* 2. Wnętrze ekspandera – tło, border i padding */
+        [data-testid="stExpander"] > details {
+            border: 1px solid #16476A !important;
+            border-radius: 0.6rem !important;
+            padding: 1rem !important;             
+            background-color: #16476A !important;      
+        }
 
-/* 3. Label ekspandera */
-[data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {
-    color: white!important;
-    font-size: 1.3vw !important;
-    font-weight: 500 !important;
-    font-family: 'Inter', sans-serif !important;
-    padding:0.01vw;
-}
+        /* 3. Label ekspandera – tylko główny tekst, ignoruje kbd i inne dzieci */
+        [data-testid="stExpander"] summary >span  {
+            color: white !important;
+            font-size: 1.3vw !important;
+            font-weight: 500 !important;
+            font-family: 'Inter', sans-serif !important;
+            padding: 0 !important;
+        }
+        [data-testid="stExpander"] summary kbd {
+            display: none !important;
+        }
 
-/* 4. Ikona ekspandera */
-[data-testid="stExpander"] summary svg {
-    width: 28px !important;
-    height: 28px !important;
-    color: white !important;
-    fill: white !important;
-}
-
-    </style>
-    """, unsafe_allow_html=True)
-    with st.expander(label="Expand to see bibliography →", expanded=False):
+        /* 4. Ikona ekspandera */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: white !important;
+            fill: white !important;
+            vertical-align: middle;
+        }
+        </style>
+        """, unsafe_allow_html=True)
+    with st.expander(label="Expand to see bibliography", expanded=False):
         st.markdown(f'<div class="section_descr"> {front_page_descriptions.bibliography} </div>', unsafe_allow_html=True)
   
 
@@ -346,7 +349,6 @@ if page == "home":
 
 # Datasets page configuration ------------------------------------------------------------------------------------
 elif page == "datasets":
-    hide_sidebar()
     datasets_page.show()
 
 elif page == "rashomon":

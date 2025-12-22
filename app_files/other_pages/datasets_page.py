@@ -16,85 +16,44 @@ def display_data_info(data_dict, idx):
 
     st.markdown("""
         <style>
-        [data-testid="stExpander"] details summary p,
-        [data-testid="stExpander"] details summary div,
-        .st-emotion-cache-1cpxqw2 {
-            font-size: 1.2vw !important;
-            color: #557d95!important;
+        /* 1. Zewnętrzny kontener – marginesy */
+        [data-testid="stExpander"] {
+            margin-top: 0rem !important;
+            margin-left: 2.5rem !important;
+            margin-right: 2.5rem !important;
+            max-width: calc(100% - 5rem) !important;  /* uwzględnia marginesy */
+        }
+
+        /* 2. Wnętrze ekspandera – tło, border i padding */
+        [data-testid="stExpander"] > details {
+            border: 1px solid #16476A !important;
+            border-radius: 0.6rem !important;
+            padding: 1rem !important;             
+            background-color: #16476A !important;      
+        }
+
+        /* 3. Label ekspandera – tylko główny tekst, ignoruje kbd i inne dzieci */
+        [data-testid="stExpander"] summary >span  {
+            color: white !important;
+            font-size: 1.3vw !important;
             font-weight: 500 !important;
             font-family: 'Inter', sans-serif !important;
-        }
-
-        /* 2. USUŃ BORDER Z CAŁEGO EXPANDERA */
-        [data-testid="stExpander"] {
-            border: none !important;
-            background-color: transparent !important;
-            box-shadow: none !important;
-            margin-left: 3rem !important;
-            margin-right:3rem !important;
             padding: 0 !important;
         }
-
-        /* 3. USUŃ BORDER Z WNĘTRZA */
-        [data-testid="stExpander"] > div,
-        [data-testid="stExpander"] details,
-        [data-testid="stExpander"] details > div {
-            border: none !important;
-            background-color: transparent !important;
-            box-shadow: none !important;
+        [data-testid="stExpander"] summary kbd {
+            display: none !important;
         }
-                [data-testid="stExpander"] .st-emotion-cache-1hynsf2,
-    [data-testid="stExpander"] .st-emotion-cache-1p1m4ay,
-    [data-testid="stExpander"] details > div:last-child,
-    [data-testid="stExpander"] .streamlit-expanderContent {
-        background-color: #16476A !important; /* Jasnoniebieski */
-        border-radius: 0.6rem !important;
-        padding: 1.5rem !important;
-        margin-top: 0.5rem !important;
-        margin-bottom: 1rem !important;
-    }
-[data-testid="stExpander"] .stMarkdown,
-    [data-testid="stExpander"] .stPlotlyChart,
-    [data-testid="stExpander"] .stColumns {
-        background-color: transparent !important;
-    }
 
-    /* 5. STYL DLA POSZCZEGÓLNYCH ELEMENTÓW */
-    [data-testid="stExpander"] .key_style,
-    [data-testid="stExpander"] .data_descr,
-    [data-testid="stExpander"] .dataset_title {
-        background-color: transparent !important;
-        color: white !important;
-    }
-
-    /* 6. IKONA EXPANDERA */
-    [data-testid="stExpander"] summary svg {
-        width: 28px !important;
-        height: 28px !important;
-        color: #16476A !important;
-        fill: #16476A!important;
-    }
-
-    /* 7. USUŃ DODATKOWE TŁA Z ELEMENTÓW STREAMLIT */
-    [data-testid="stExpander"] .st-emotion-cache-1v0mbdj,
-    [data-testid="stExpander"] .st-emotion-cache-1v0mbdj > div {
-        background-color: transparent !important;
-    }
-
-    /* 8. DLA WSZYSTKICH ELEMENTÓW W EXPANDERZE */
-    [data-testid="stExpander"] * {
-        background-color: transparent !important;
-        color: white !important;
-    }
-
-    /* 9. SPECJALNY STYL DLA CAŁEJ ZAWARTOŚCI */
-    .expander-content-wrapper {
-        background-color: #e6f0ff !important;
-        padding: 20px !important;
-        border-radius: 10px !important;
-    }
-    </style>
-    """, unsafe_allow_html=True)
+        /* 4. Ikona ekspandera */
+        [data-testid="stExpander"] summary svg {
+            width: 28px !important;
+            height: 28px !important;
+            color: white !important;
+            fill: white !important;
+            vertical-align: middle;
+        }
+        </style>
+        """, unsafe_allow_html=True)
         
     with st.expander("Expand for details →", expanded=False):    
         for key, value in data_dict.items():
@@ -102,7 +61,40 @@ def display_data_info(data_dict, idx):
             if key=="Title" or key== "path" or key =="target_col":
                 continue
             if key=="Feature description":
+                st.markdown(f'<div class="key_style">{key}</div>', unsafe_allow_html=True) 
+                list_html = "<ul>" 
+                for feat in value: 
+                    list_html += f"<li>{feat}</li>" 
+                list_html += "</ul>" 
+               
+                st.markdown(
+                    f'<div style="color: white;">  <style scoped>  div ul li {{  color: white !important;  margin-bottom: 0.5em; }}  </style>  {list_html}  </div>', 
+                      unsafe_allow_html=True )
                 continue
+
+            if key=="Source":
+                st.markdown(f'<div class="key_style">{key}</div>', unsafe_allow_html=True)
+                st.markdown(
+                f'''
+                <div class="source-container-{idx}">
+                    {data_dict[key]}
+                </div>
+                <style scoped>
+                    .source-container-{idx} a {{
+                        color: white !important;   /* kolor tylko dla tego linku */
+                        text-decoration: none;
+                        margin-left:0.5rem;
+                    }}
+                    .source-container-{idx} a:hover {{
+                        color: white !important;
+                        text-decoration: underline;
+                    }}
+                </style>
+                ''', 
+                unsafe_allow_html=True
+            )
+            
+
             else:
 
                 st.markdown(f'<div class="key_style">{key}</div>', unsafe_allow_html=True)

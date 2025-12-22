@@ -97,8 +97,8 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
                 st.markdown(
                         f"""
                         <div style="font-size:15px; margin-bottom:10px;">
-                            <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.2px; ">Base model : </span>
-                            <span style="color:#989898; font-family: 'Inter', sans-serif;"> {descriptions["base_model_return"]}</span>
+                            <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.2px; padding-left:1.2vw; ">Base model : </span>
+                            <span style="color:#989898; font-family: 'Inter', sans-serif;padding-left:1.2vw;"> {descriptions["base_model_return"]}</span>
                         </div>
                         """,
                         unsafe_allow_html=True
@@ -106,8 +106,8 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
                 st.markdown(
                         f"""
                         <div style="font-size:15px; margin-bottom:10px;">
-                             <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.2px;">Base metric : </span>
-                            <span style="color:#989898; font-family: 'Inter', sans-serif;"> {descriptions["base_metric_return"]}</span>
+                             <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500;padding-left:1.2vw; letter-spacing: 0.2px;">Base metric : </span>
+                            <span style="color:#989898; font-family: 'Inter', sans-serif;padding-left:1.2vw;"> {descriptions["base_metric_return"]}</span>
                         </div>
                         """,
                         unsafe_allow_html=True
@@ -115,8 +115,8 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
                 st.markdown(
                         f"""
                         <div style="font-size:15px; margin-bottom:10px;">
-                            <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.2px;">Base model's score : </span>
-                            <span style="color:#989898; font-family: 'Inter', sans-serif;"> {descriptions["base_model_score_return"]:.3f}</span>
+                            <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500;padding-left:1.2vw; letter-spacing: 0.2px;">Base model's score : </span>
+                            <span style="color:#989898; font-family: 'Inter', sans-serif;padding-left:1.2vw;"> {descriptions["base_model_score_return"]:.3f}</span>
                         </div>
                         """,
                         unsafe_allow_html=True
@@ -337,6 +337,9 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
                 letter-spacing: 0.1px;
                 line-height: 1.5; 
 
+            }
+            [data-baseweb="checkbox"] {
+                margin-left: 1.2vw;
             }
             </style>
             """,
@@ -817,6 +820,16 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
                     '''
                 st.markdown(f'<div class="section_description no_padding">{descr}</div>', unsafe_allow_html=True)
 
+                st.markdown(
+                    """
+                    <style>
+                    [data-baseweb="radio"] {
+                        margin-left: 1.2vw;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
                 metric_option = st.radio(
                     "Select metric:",
                     ["Percent Agreement", "Cohen's Kappa"],

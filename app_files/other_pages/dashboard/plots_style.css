@@ -188,6 +188,9 @@
     font-weight: 300 !important;
     letter-spacing: 0.1px;
     line-height: 1.6; 
+    margin-left:1.2vw;
+    margin-right:1.2vw;
+
     margin-bottom:15px;
    
 }
@@ -227,6 +230,8 @@
 .plots_descr{
     font-family: 'Inter', 'Segoe UI', sans-serif;
     font-weight: 300;
+    padding-left:1.2vw;
+    padding-right:1.2vw;
     line-height: 1.2;
     font-size: 15px;
     color: #989898;

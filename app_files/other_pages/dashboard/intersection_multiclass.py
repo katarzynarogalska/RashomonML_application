@@ -78,8 +78,8 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
                 st.markdown(
                         f"""
                         <div style="font-size:15px; margin-bottom:10px;">
-                            <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.2px; ">Base model : </span>
-                            <span style="color:#989898; font-family: 'Inter', sans-serif;"> {descriptions["base_model_return"]}</span>
+                            <span style="color: #426c85;font-family: 'Inter', sans-serif;padding-left:1.2vw; font-weight: 500; letter-spacing: 0.2px; ">Base model : </span>
+                            <span style="color:#989898; font-family: 'Inter', sans-serif;padding-left:1.2vw;"> {descriptions["base_model_return"]}</span>
                         </div>
                         """,
                         unsafe_allow_html=True
@@ -87,8 +87,8 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
                 st.markdown(
                         f"""
                         <div style="font-size:15px; margin-bottom:10px;">
-                             <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.2px;">Base metrics : </span>
-                            <span style="color:#989898; font-family: 'Inter', sans-serif;"> {descriptions["base_metric_return"][0]},  {descriptions["base_metric_return"][1]} </span>
+                             <span style="color: #426c85;font-family: 'Inter', sans-serif;padding-left:1.2vw; font-weight: 500; letter-spacing: 0.2px;">Base metrics : </span>
+                            <span style="color:#989898; font-family: 'Inter', sans-serif;padding-left:1.2vw;"> {descriptions["base_metric_return"][0]},  {descriptions["base_metric_return"][1]} </span>
                         </div>
                         """,
                         unsafe_allow_html=True
@@ -96,8 +96,8 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
                 st.markdown(
                         f"""
                         <div style="font-size:15px; margin-bottom:10px;">
-                            <span style="color: #426c85;font-family: 'Inter', sans-serif; font-weight: 500; letter-spacing: 0.2px;">Weighted sum method : </span>
-                            <span style="color:#989898; font-family: 'Inter', sans-serif;"> {descriptions["weighted_method_return"]}</span>
+                            <span style="color: #426c85;font-family: 'Inter', sans-serif; padding-left:1.2vw;font-weight: 500; letter-spacing: 0.2px;">Weighted sum method : </span>
+                            <span style="color:#989898; font-family: 'Inter', sans-serif;padding-left:1.2vw;"> {descriptions["weighted_method_return"]}</span>
                         </div>
                         """,
                         unsafe_allow_html=True
@@ -840,7 +840,16 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
                     This section shows how models in the Rashomon Set agree with the base model using Percent Agreement or Cohen’s Kappa metrics.
                     '''
                 st.markdown(f'<div class="section_description no_padding">{descr}</div>', unsafe_allow_html=True)
-
+                st.markdown(
+                    """
+                    <style>
+                    [data-baseweb="radio"] {
+                        margin-left: 1.2vw;
+                    }
+                    </style>
+                    """,
+                    unsafe_allow_html=True
+                )
                 metric_option = st.radio(
                     "Select metric:",
                     ["Percent Agreement", "Cohen's Kappa"],

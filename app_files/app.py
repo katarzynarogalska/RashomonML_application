@@ -32,8 +32,7 @@ DATASETS = {
 css_path = current_dir/ "style.css"
 
 st.set_page_config(
-    page_title="App",
-    page_icon="🏠",
+    page_title="arsa_ml_website",
     layout="wide"
 )
 

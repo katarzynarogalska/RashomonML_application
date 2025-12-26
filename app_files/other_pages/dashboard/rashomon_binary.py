@@ -83,7 +83,7 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
             )
             st.markdown('<div class = "section_title"> Models present in the Rashomon Set</div>', unsafe_allow_html=True)
             with st.container(key=prefixed_key("table_container"), height="stretch"):
-                st.plotly_chart(rashomon_table, width='stretch', key=prefixed_key("rashomon_table_plot"))
+                st.plotly_chart(rashomon_table, width='stretch', key=prefixed_key("rashomon_table_plot"), config={'staticPlot': True})
                 st.markdown(f'<div class="plots_descr rashomon-table-descr">{descriptions["generate_rashomon_set_table"]}</div>', unsafe_allow_html=True)
         
         
@@ -320,7 +320,7 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
             unsafe_allow_html=True
         )
         descr= """Ambiguity can be interpreted as the proportion of observations that would receive a different prediction if we were to choose another model from the Rashomon Set, while
-        Discrepancy is the maximum proportion of individuals with different predictions from the base model."""
+        Discrepancy is the maximum proportion of individuals whose predictions would change if we choose a different competing model from the Rashomon Set."""
         st.markdown(
             f'<div class="section_description">{descr}</div>',
             unsafe_allow_html=True
@@ -350,7 +350,7 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
         use_probability = st.checkbox("Show probabilistic version", value=False, key=prefixed_key("show_probabilistic_version"))
         
         if use_probability:
-            st.markdown( f'<div class="section_description">While calculating probbilistic ambiguity and discrepancy, predictions are considered conflicting if the difference between their risk predictions is greater or equal to delta.</div>',
+            st.markdown( f'<div class="section_description">While calculating probabilistic ambiguity and discrepancy, the difference between risk probabilities is considered meaningful if it is greater then or equal to delta.</div>',
             unsafe_allow_html=True)
 
         lolipop_col, amb_col, discr_col = st.columns([1.1,1.5,1.5])

@@ -377,7 +377,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
             unsafe_allow_html=True
         )
         descr= """Ambiguity can be interpreted as the proportion of observations that would receive a different prediction if we were to choose another model from the Rashomon Set, while
-        Discrepancy is the maximum proportion of individuals with different predictions from the base model."""
+        Discrepancy is the maximum proportion of individuals whose predictions would change if we choose a different competing model from the Rashomon Set."""
         st.markdown(
             f'<div class="section_description">{descr}</div>',
             unsafe_allow_html=True

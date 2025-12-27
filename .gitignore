@@ -1,6 +1,7 @@
 /.vscode
 .DS_Store
 /arsa-env
+/arsa-test
 __pycache__/
 *.pyc
 venv/

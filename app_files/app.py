@@ -5,7 +5,7 @@ from other_pages import rashomon_page, intersection_page, datasets_page
 root_path = Path(__file__).parent.parent
 texts_path = Path(__file__).parent.parent / "description_files" 
 sys.path.append(str(texts_path))
-import front_page_descriptions
+from description_files import front_page_descriptions
 from PIL import Image
 import pandas as pd
 

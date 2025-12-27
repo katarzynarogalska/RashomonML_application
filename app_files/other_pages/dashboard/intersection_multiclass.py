@@ -103,7 +103,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
                         unsafe_allow_html=True
                 )
             with st.container(key=prefixed_key("table_container"), height="stretch"):
-                st.plotly_chart(rashomon_table, width='stretch',  key=prefixed_key("rashomon_table_plot"))
+                st.plotly_chart(rashomon_table, width='stretch',  key=prefixed_key("rashomon_table_plot"), config={'staticPlot': True})
                 st.markdown(f'<div class="plots_descr rashomon-table-descr">{descriptions["generate_rashomon_set_table"]}</div>', unsafe_allow_html=True)
         
         
@@ -178,9 +178,9 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
 
             with st.container(key = prefixed_key("gauge")):
                 st.markdown(f'<div class = "section_description">The following chart illustrates the fraction of models from the leaderboard that are included in the Rashomon Intersection.</div>', unsafe_allow_html=True)
-                st.plotly_chart(gauge_size, key =prefixed_key("gauge_size_plot"))
+                st.plotly_chart(gauge_size, key =prefixed_key("gauge_size_plot"), config={'staticPlot': True})
                 st.markdown(f'<div class = "section_description">Additionally, the numbers of models from separate Rashomon Sets included in the Intesection are represented by the plots below.</div>', unsafe_allow_html=True)
-                st.plotly_chart(gauge_rashomons, key= prefixed_key("gauge_rashomons_plot"))
+                st.plotly_chart(gauge_rashomons, key= prefixed_key("gauge_rashomons_plot"), config={'staticPlot': True})
 
         
         with venn_col:
@@ -195,7 +195,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
 
             with st.container(key = prefixed_key("venn"), height='stretch'):
                 st.markdown(f'<div class = "venn_description">{venn_descr}</div>', unsafe_allow_html=True)
-                st.plotly_chart(venn_plot, key= prefixed_key("venn_plot"))
+                st.plotly_chart(venn_plot, key= prefixed_key("venn_plot"), config={'staticPlot': True})
 
     # -------------------------------------- SAME AS RASHOMON SET -----------------------------------------------------------------
 
@@ -238,7 +238,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
             )
     
             with st.container(key = prefixed_key("pattern_white_container"), height="stretch"):
-                    st.plotly_chart(pattern_indicator, width='stretch', key=prefixed_key("pattern_indicator_plot"))
+                    st.plotly_chart(pattern_indicator, width='stretch', key=prefixed_key("pattern_indicator_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{pattern_indicator_descr}</div>',
                         unsafe_allow_html=True
@@ -277,7 +277,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
             )
 
             with st.container(key = prefixed_key("ratio_white_container"), height="stretch"):
-                    st.plotly_chart(ratio_indicatior, width='stretch', key=prefixed_key("ratio_indicator_plot"))
+                    st.plotly_chart(ratio_indicatior, width='stretch', key=prefixed_key("ratio_indicator_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{ratio_indicator_descr}</div>',
                         unsafe_allow_html=True
@@ -324,7 +324,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
 
 
             with st.container(key = prefixed_key("ratio_epsilon_white_container"), height="stretch"):
-                    st.plotly_chart(ratio_vs_eps_plot, width='stretch', key=prefixed_key("ratio_vs_epsilon_plot"))
+                    st.plotly_chart(ratio_vs_eps_plot, width='stretch', key=prefixed_key("ratio_vs_epsilon_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{ratio_vs_eps_descr}</div>',
                         unsafe_allow_html=True
@@ -362,7 +362,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
             )
 
             with st.container(key = prefixed_key("pattern_epsilon_white_container"), height="stretch"):
-                    st.plotly_chart(pattern_vs_eps_plot, width='stretch', key=prefixed_key("pattern_vs_eps_plot"))
+                    st.plotly_chart(pattern_vs_eps_plot, width='stretch', key=prefixed_key("pattern_vs_eps_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{pattern_vs_eps_descr}</div>',
                         unsafe_allow_html=True
@@ -889,7 +889,7 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
                 '''
                 st.markdown(f'<div class="section_description less_padding">{descr}</div>', unsafe_allow_html=True)
                 with st.container(key=prefixed_key('fi_table')):
-                    st.plotly_chart(fi_table, width='stretch', key=prefixed_key('fi_table_plot'))
+                    st.plotly_chart(fi_table, width='stretch', key=prefixed_key('fi_table_plot'), config={'staticPlot': True})
                     fi_table_description_update = fi_table_descr + " <br>If the base model does not provide feature importance values, a ‘–’ will be displayed to indicate that this information is unavailable."
                     st.markdown(f'<div class = "plots_descr">{fi_table_description_update}</div>', unsafe_allow_html=True)
                 st.markdown(f'<div class="section_description heatmap-descr">{fi_heatmap_descr}</div>', unsafe_allow_html=True)
@@ -915,4 +915,4 @@ def render_multiclass_dashboard_intersection(plots, descriptions, prefix=""):
             with fi_heatmap_col:
                 #feature importance heatmap
                 with st.container(key = prefixed_key('fi_heatmap'), height="stretch"):
-                    st.plotly_chart(fi_heatmap, width='stretch', key=prefixed_key('fi_heatmap_plot'))
+                    st.plotly_chart(fi_heatmap, width='stretch', key=prefixed_key('fi_heatmap_plot'), config={'staticPlot': True})

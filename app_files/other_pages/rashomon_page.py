@@ -233,7 +233,10 @@ def show():
                         render_multiclass_dashboard(plots_autogluon, descriptions_autogluon, prefix="autogluon") 
                 except ValueError as e:
                     spinner_placeholder.empty()
-                    st.warning("Please provide a greater epsilon value. For the selected base metric the Rashomon Set consists only of 1 model.")
+                    if "the Rashomon Set consists of" in str(e):
+                        st.warning("Please provide a greater epsilon value. For the selected base metric the Rashomon Set consists only of 1 model.")
+                    else:
+                        raise
             else:
                 st.session_state.task_type = None
                 

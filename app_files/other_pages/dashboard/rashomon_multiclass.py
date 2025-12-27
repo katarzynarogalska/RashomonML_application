@@ -83,7 +83,7 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
             )
             st.markdown('<div class = "section_title"> Models present in the Rashomon Set</div>', unsafe_allow_html=True)
             with st.container(key=prefixed_key("table_container"), height="stretch"):
-                st.plotly_chart(rashomon_table, width='stretch', key=prefixed_key("rashomon_table_plot"))
+                st.plotly_chart(rashomon_table, width='stretch', key=prefixed_key("rashomon_table_plot"), config={'staticPlot': True})
                 st.markdown(f'<div class="plots_descr rashomon-table-descr">{descriptions["generate_rashomon_set_table"]}</div>', unsafe_allow_html=True)
         
         
@@ -134,7 +134,7 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
                 gauge_descr = descriptions['set_size_indicator']
 
             
-                st.plotly_chart(gauge_size, key=prefixed_key("gauge_size_plot"))
+                st.plotly_chart(gauge_size, key=prefixed_key("gauge_size_plot"), config={'staticPlot': True})
                 st.markdown(
                         f"""
                         <div class = "plots_descr">
@@ -183,7 +183,7 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
             )
     
             with st.container(key=prefixed_key("pattern_white_container"), height="stretch"):
-                    st.plotly_chart(pattern_indicator, width='stretch', key=prefixed_key("pattern_indicator_plot"))
+                    st.plotly_chart(pattern_indicator, width='stretch', key=prefixed_key("pattern_indicator_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{pattern_indicator_descr}</div>',
                         unsafe_allow_html=True
@@ -222,7 +222,7 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
             )
 
             with st.container(key = prefixed_key("ratio_white_container"), height="stretch"):
-                    st.plotly_chart(ratio_indicatior, width='stretch', key=prefixed_key("ratio_indicator_plot"))
+                    st.plotly_chart(ratio_indicatior, width='stretch', key=prefixed_key("ratio_indicator_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{ratio_indicator_descr}</div>',
                         unsafe_allow_html=True
@@ -267,7 +267,7 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
 
 
             with st.container(key=prefixed_key("ratio_epsilon_white_container"), height="stretch"):
-                    st.plotly_chart(ratio_vs_eps_plot, width='stretch', key=prefixed_key("ratio_vs_eps_plot"))
+                    st.plotly_chart(ratio_vs_eps_plot, width='stretch', key=prefixed_key("ratio_vs_eps_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{ratio_vs_eps_descr}</div>',
                         unsafe_allow_html=True
@@ -305,7 +305,7 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
             )
 
             with st.container(key=prefixed_key("pattern_epsilon_white_container"), height="stretch"):
-                    st.plotly_chart(pattern_vs_eps_plot, width='stretch', key=prefixed_key("pattern_vs_eps_plot"))
+                    st.plotly_chart(pattern_vs_eps_plot, width='stretch', key=prefixed_key("pattern_vs_eps_plot"), config={'staticPlot': True})
                     st.markdown(
                         f'<div class="plots_descr">{pattern_vs_eps_descr}</div>',
                         unsafe_allow_html=True
@@ -834,7 +834,7 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
                 '''
                 st.markdown(f'<div class="section_description additional_padding">{descr}</div>', unsafe_allow_html=True)
                 with st.container(key=prefixed_key('fi_table')):
-                    st.plotly_chart(fi_table, width='stretch', key=prefixed_key('fi_table_plot'))
+                    st.plotly_chart(fi_table, width='stretch', key=prefixed_key('fi_table_plot'), config={'staticPlot': True})
                     fi_table_description_update = fi_table_descr + " <br>If the base model does not provide feature importance values, a ‘–’ will be displayed to indicate that this information is unavailable."
                     st.markdown(f'<div class = "plots_descr">{fi_table_description_update}</div>', unsafe_allow_html=True)
                 st.markdown(f'<div class="section_description heatmap-descr">{fi_heatmap_descr}</div>', unsafe_allow_html=True)
@@ -860,4 +860,4 @@ def render_multiclass_dashboard(plots, descriptions, prefix=""):
             with fi_heatmap_col:
                 #feature importance heatmap
                 with st.container(key = prefixed_key('fi_heatmap'), height="stretch"):
-                    st.plotly_chart(fi_heatmap, width='stretch', key=prefixed_key('fi_heatmap_plot'))
+                    st.plotly_chart(fi_heatmap, width='stretch', key=prefixed_key('fi_heatmap_plot'), config={'staticPlot': True})

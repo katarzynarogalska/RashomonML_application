@@ -1,8 +1,8 @@
 import streamlit as st
 import pandas as pd
 import inspect
-from rashomon_analysis.rashomon_intersection import RashomonIntersection
-from rashomon_analysis.visualizers.intersection_visualizer import IntersectionVisualizer
+from arsa_ml.rashomon_intersection import RashomonIntersection
+from arsa_ml.visualizers.intersection_visualizer import IntersectionVisualizer
 from .dashboard.intersection_binary import render_binary_dashboard_intersection
 from .dashboard.intersection_multiclass import render_multiclass_dashboard_intersection
 import pickle

@@ -1,6 +1,6 @@
 import streamlit as st
-from rashomon_analysis.rashomon_set import RashomonSet
-from rashomon_analysis.visualizers.rashomon_visualizer import Visualizer
+from arsa_ml.rashomon_set import RashomonSet
+from arsa_ml.visualizers.rashomon_visualizer import Visualizer
 from .dashboard.rashomon_binary import render_binary_dashboard
 from .dashboard.rashomon_multiclass import render_multiclass_dashboard
 import inspect 

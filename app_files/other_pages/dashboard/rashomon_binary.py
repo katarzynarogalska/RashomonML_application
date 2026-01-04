@@ -1003,7 +1003,7 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
             yaxis=dict(title_font=dict(color="#989898"), tickfont=dict(color="#989898"), showgrid=True),
             showlegend=False,
             title={
-                'text': "Viable Prediction Range Widths by class",
+                'text': "Viable Prediction Range vs Base Model's predictions",
                 'y':0.97,
                 'x':0.02,
                 'xanchor': 'left',

@@ -110,7 +110,10 @@ def show():
                             st.session_state.weight1 = st.number_input(f"Weight for {st.session_state.metric1 or 'Metric 1'}:", min_value=0.0, max_value=1.0, value=0.5, step=0.01, key="weight1_input")
                 
                             st.session_state.weight2 = 1.0 - st.session_state.weight1
-                            st.number_input(f"Weight for {st.session_state.metric2 or 'Metric 2'}:", min_value=0.0, max_value=1.0, value=st.session_state.weight2, step=0.01, key="weight2_input", disabled=True)
+                            st.markdown(f'<div class="selected_params"> Selected weight for {st.session_state.metric1} : {st.session_state.weight1:.2f}  </div>', unsafe_allow_html=True)
+                            st.markdown(f'<div class="selected_params"> Selected weight for {st.session_state.metric2} : {1- st.session_state.weight1:.2f}  </div>', unsafe_allow_html=True)
+                            st.session_state.weights2 = 1-st.session_state.weight1
+                            #st.number_input(f"Weight for {st.session_state.metric2 or 'Metric 2'}:", min_value=0.0, max_value=1.0, value=st.session_state.weight2, step=0.01, key="weight2_input", disabled=True)
 
             with col6:
                 if st.session_state.task_type =="binary":

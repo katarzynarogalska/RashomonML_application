@@ -84,7 +84,7 @@ def render_binary_dashboard(plots, descriptions, prefix=""):
             
             st.markdown('<div class = "section_title"> Models present in the Rashomon Set</div>', unsafe_allow_html=True)
             with st.container(key=prefixed_key("table_container"), height="stretch"):
-                st.plotly_chart(rashomon_table, width='stretch', key=prefixed_key("rashomon_table_plot"), config={'staticPlot': True})
+                st.plotly_chart(rashomon_table, width='stretch', key=prefixed_key("rashomon_table_plot"))
                 st.markdown(f'<div class="plots_descr rashomon-table-descr">{descriptions["generate_rashomon_set_table"]}</div>', unsafe_allow_html=True)
         
         

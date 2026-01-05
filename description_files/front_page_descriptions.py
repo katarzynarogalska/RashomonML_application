@@ -59,5 +59,8 @@ bibliography ="""
 4. <a href="https://link.springer.com/chapter/10.1007/978-981-99-1521-7_7" target="_blank">Weighted Sum in multi-objective optimization</a><br>
 5. <a href="https://link.springer.com/chapter/10.1007/3-540-27659-9_1" target="_blank">Multi-objective optimization</a><br>
 6. <a href="https://dl.acm.org/doi/10.1145/3610536" target="_blank">Pareto Front</a><br>
+7. <a href="https://autogluon.ai" target="_blank">AutoGluon library</a><br>
+8. <a href="https://h2o.ai/" target="_blank">H2O AutoML library</a><br>
+This product uses AutoGluon, H2O and Streamlit open source libraries under Apache License 2.0.
 """
 

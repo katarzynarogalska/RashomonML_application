@@ -334,7 +334,7 @@ def show():
                         render_multiclass_dashboard_intersection(plots_h2o, descriptions_h2o, prefix="h2o") 
                 except ValueError as e:
                     spinner_placeholder.empty()
-                    if "the Rashomon Set consists of" in str(e):
+                    if "the Rashomon Intersection consists of" in str(e):
                         st.warning("Please provide a greater epsilon value. For the selected base metric the Rashomon Set consists only of 1 model.")
                     else:
                         raise

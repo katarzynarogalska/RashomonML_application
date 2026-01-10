@@ -35,6 +35,8 @@ if "task_type" not in st.session_state:
 
 def load_converted_data(selected_dataset, framework):
     dataset = DATASETS[selected_dataset]
+    if framework.lower() == "autogluon":
+        framework = "autogluon_good_quality"
     converter_results_path = Path(f"converter_results/{framework}/{dataset}")
     leaderboard = pd.read_csv( converter_results_path / "leaderboard.csv")
     y_true = pd.read_csv(converter_results_path/ "y_true.csv")

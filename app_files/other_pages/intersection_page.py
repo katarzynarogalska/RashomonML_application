@@ -265,7 +265,7 @@ def show():
                     st.warning("Please select a dataset for analysis.")
                     
                 elif st.session_state.metric1 =="--choose--" or st.session_state.metric2 =="--choose--":
-                    st.warning("Please choose two evaluation metrics")
+                    st.warning("Please choose two base metrics.")
             
 # h2o tab -------------------------------------------------------
         with h2o_tab:
@@ -348,7 +348,7 @@ def show():
                     st.warning("Please select a dataset for analysis.")
                     
                 elif st.session_state.metric1 =="--choose--" or st.session_state.metric2 =="--choose--":
-                    st.warning("Please choose two evaluation metrics")
+                    st.warning("Please choose two base metrics")
 
 
 def visualize_rashomon_intersection_volume(leaderboard, predictions, proba_predictions, base_metric1, base_metric2):

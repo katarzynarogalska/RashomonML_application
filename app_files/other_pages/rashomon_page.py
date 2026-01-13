@@ -246,7 +246,7 @@ def show():
                     st.warning("Please select a dataset for analysis.")
                     
                 elif selected_metric=="--choose--":
-                    st.warning("Please choose evaluation metric.")
+                    st.warning("Please choose a base metric.")
             
 # h2o tab -------------------------------------------------------
         with h2o_tab:
@@ -326,7 +326,7 @@ def show():
                     st.warning("Please select a dataset for analysis.")
                     
                 elif selected_metric=="--choose--":
-                    st.warning("Please choose evaluation metric.")
+                    st.warning("Please choose a base metric metric.")
 
 
 
